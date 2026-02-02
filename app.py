@@ -422,7 +422,7 @@ project_item(
     "1️⃣ AI VisionLock",
     "AI VisionLock is a real-time single object tracking system that maintains accurate object localization across video frames, even under motion and partial occlusion.",
     ["CompVision", "OpenCV", "Template Matching", "Object Tracking", "Streamlit"],
-    "videos/video2_finaloutput.mp4",
+    "video2_finaloutput.mp4",
     "https://github.com/introverthacker11/CompVision-AIVisionLock-ObjectTrackingSystem___r38"
 )
 
@@ -431,34 +431,34 @@ project_item(
     "2️⃣ Face Verification System",
     "FaceVerify-AI is an AI-powered face verification system designed to provide secure and reliable identity authentication using computer vision and deep learning techniques.",
     ["CompVision", "OpenCV", "YOLOv8", "Deep Learning", "Python"],
-    "videos/faceVS.mp4",
+    "faceVS.mp4",
     "https://github.com/introverthacker11/CompVision-FaceVerificationSystem___r35"
 )
 
-# Project 4
+# Project 3
 project_item(
     "3️⃣ UrbanSeg-AI",
     "UrbanSeg-AI is an AI-powered semantic and instance segmentation system for urban environments, capable of identifying roads, vehicles, buildings, and pedestrians in real time.",
     ["CompVision", "YOLOv8", "Instance Segmentation", "Python", "Streamlit"],
-    "videos/city view output.mp4",
+    "city view output.mp4",
     "https://github.com/introverthacker11/CompVision-UrbanSegAI___r37"
-)
-
-# Project 5
-project_item(
-    "4️⃣ SafeSight-AI",
-    "SafeSight-AI is an AI-powered PPE detection and tracking system that identifies safety equipment such as helmets and vests in real time to improve workplace safety compliance.",
-    ["CompVision", "YOLOv8", "PPE Detection", "Python", "Streamlit"],
-    "videos/ppe_detected.mp4",
-    "https://github.com/introverthacker11/CompVision-SafeSightAI-PPE-DetectionSystem___r36"
 )
 
 # Project 4
 project_item(
+    "4️⃣ SafeSight-AI",
+    "SafeSight-AI is an AI-powered PPE detection and tracking system that identifies safety equipment such as helmets and vests in real time to improve workplace safety compliance.",
+    ["CompVision", "YOLOv8", "PPE Detection", "Python", "Streamlit"],
+    "ppe_detected.mp4",
+    "https://github.com/introverthacker11/CompVision-SafeSightAI-PPE-DetectionSystem___r36"
+)
+
+# Project 5
+project_item(
     "5️⃣ AI-GeoVisionID",
     "AI-GeoVisionID is a real-time face recognition system that detects and identifies world leaders from images and videos using deep facial embeddings, even under varying lighting and pose conditions.",
     ["Computer Vision", "YOLOv8", "ArcFace", "DeepFace", "OpenCV", "Streamlit", "Face Recognition"],
-    "videos/output_world_leaders_arrive.mp4",
+    "output_world_leaders_arrive.mp4",
     "https://github.com/introverthacker11/CompVision-AI-GeoVisionID-FaceRecognitionSystem"
 )
 
@@ -512,4 +512,5 @@ st.markdown("""
     <p style="font-size: 0.8rem;">Website made by Rayyan Ahmed (Not AI).</p>
     <p style="font-size: 0.8rem;">© 2026 Rayyan Ahmed.</p>
 </div>
+
 """, unsafe_allow_html=True)
