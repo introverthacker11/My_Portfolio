@@ -302,44 +302,59 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-skills = [
-    "Prompt Engineering",
-    "Computer Vision",
-    "Large Language Models (LLMs)",
-    "Natural Language Processing (NLP)",
-    "Deep Learning (DL)",
-    "Machine Learning (ML)",
-    "Streamlit Web Development",
-    "Data Analysis",
-    "Exploratory Data Analysis (EDA)",
-    "Python Development",
-    "Full Stack Development",
-    "Model Deployment & Inference"
-]
+# Expanded and Categorized Skills
+skill_categories = {
+    "Core AI & Modeling": [
+        "Machine Learning", "Deep Learning", "Reinforcement Learning", 
+        "Model Evaluation", "Research & Experimentation"
+    ],
+    "Generative AI & LLMs": [
+        "Large Language Models (LLMs)", "Generative AI", "Prompt Engineering", 
+        "RAG", "AI Agents", "Model Fine-Tuning"
+    ],
+    "NLP & Vision": [
+        "Natural Language Processing (NLP)", "Computer Vision", 
+        "Feature Engineering", "Data Preprocessing"
+    ],
+    "Data & Analytics": [
+        "Data Analysis", "Data Visualization", "Statistical Analysis", 
+        "Pandas / NumPy / SQL", "Scikit-learn"
+    ],
+    "Engineering & Ops": [
+        "Python Development", "Streamlit / Web Dev", "MLOps", 
+        "AI Model Deployment", "API Integration (REST / NASA)"
+    ],
+    "Tools & Frameworks": [
+        "TensorFlow / Keras", "Git / GitHub", "Full Stack Development"
+    ]
+}
+
+# Flattening the list for your existing grid logic, or you can iterate by category
+all_skills = [item for sublist in skill_categories.values() for item in sublist]
 
 col1, col2, col3, col4, col5, col6 = st.columns([1, 2, 2, 2, 2, 1])
-
 skill_cols = [col2, col3, col4, col5]
 
-for i, skill in enumerate(skills):
+for i, skill in enumerate(all_skills):
     with skill_cols[i % 4]:
         st.markdown(
             f"""
             <div class="glass-card" style="
                 text-align: center;
-                padding: 18px 10px;
-                margin-bottom: 22px;
-                font-size: 0.95rem;
+                padding: 15px 8px;
+                margin-bottom: 15px;
+                font-size: 0.85rem;
                 font-weight: 500;
                 color: #e5e7eb;
-                letter-spacing: 0.3px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 10px;
+                background: rgba(255, 255, 255, 0.05);
             ">
                 {skill}
             </div>
             """,
             unsafe_allow_html=True
         )
-
 
 # --- EXPERIENCE SECTION ---
 st.markdown('<div id="experience" class="section-header"><h2 class="section-title">Experience</h2><div class="section-divider"></div></div>', unsafe_allow_html=True)
