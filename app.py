@@ -343,12 +343,12 @@ for i, skill in enumerate(all_skills):
                 text-align: center;
                 padding: 15px 8px;
                 margin-bottom: 15px;
-                font-size: 0.85rem;
-                font-weight: 500;
+                font-size: 0.92rem;
+                font-weight: 750;
                 color: #e5e7eb;
                 border: 1px solid rgba(255, 255, 255, 0.1);
                 border-radius: 10px;
-                background: rgba(255, 255, 255, 0.02);
+                background: rgba(200, 200, 200, 0.02);
             ">
                 {skill}
             </div>
