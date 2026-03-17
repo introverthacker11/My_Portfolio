@@ -396,7 +396,7 @@ with col2:
         </div>
         <ul style="color: #cbd5e1; line-height: 1.6;">
             <li>Built a weather-focused ML solution in collaboration with teammates as part of the world’s largest global hackathon.</li>
-            <li>Project selected as a <b>Global Nominee</b>, ranking among the top 1,900 international projects globally.</li>
+            <li>Project selected as a <b>Global Nominee</b>, ranking among the <b>top 1,900<b> out of 18500+ international projects globally.</li>
         </ul>
     </div>
     """, unsafe_allow_html=True)
