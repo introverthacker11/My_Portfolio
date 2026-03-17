@@ -265,13 +265,13 @@ st.markdown("""
     <div class="hero-badge">AVAILABLE FOR OPPORTUNITIES</div>
     <h1 class="hero-title">Rayyan Ahmed</h1>
     <p class="hero-subtitle">
-        AI Engineer & Problem Solver strengthening in <b>AI Development</b> and <b>AI Automation</b>. <br>
+        AI Engineer & Problem Solver specializing in <b>AI Development</b> and <b>AI Automation</b>. <br>
         Transforming complex data into intelligent, end-to-end AI products.
     </p>
     <div class="btn-container">
         <a href="https://www.linkedin.com/in/rayyan-ahmed-504725321/" target="_blank" class="secondary-btn">LinkedIn</a>
         <a href="https://github.com/CodingRayyan" target="_blank" class="secondary-btn">GitHub</a>
-        <a href="MY_RESUME.pdf" class="secondary-btn">Download Resume</a>
+        <a href="app/static/MY_RESUME.pdf" download="MY_Resume.pdf" class="secondary-btn">Download Resume</a>
     </div>
 </div>
 """, unsafe_allow_html=True)
