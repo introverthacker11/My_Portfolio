@@ -271,7 +271,7 @@ st.markdown("""
     <div class="btn-container">
         <a href="https://www.linkedin.com/in/rayyan-ahmed-504725321/" target="_blank" class="secondary-btn">LinkedIn</a>
         <a href="https://github.com/CodingRayyan" target="_blank" class="secondary-btn">GitHub</a>
-        <a href="MY RESUME.pdf" class="secondary-btn">Download Resume</a>
+        <a href="MY_RESUME.pdf" class="secondary-btn">Download Resume</a>
     </div>
 </div>
 """, unsafe_allow_html=True)
