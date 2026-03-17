@@ -346,19 +346,40 @@ st.markdown('<div id="experience" class="section-header"><h2 class="section-titl
 
 col1, col2, col3 = st.columns([1, 6, 1])
 with col2:
-    # Tata Group
+    # TATA Group (Virtual)
     st.markdown("""
     <div class="glass-card">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
             <div>
-                <h3 style="margin: 0; color: #fff;">TATA Group</h3>
+                <h3 style="margin: 0; color: #fff;">TATA Group (Virtual)</h3>
                 <p style="margin: 0; color: var(--primary-color); font-weight: 600;">Data Visualization Intern</p>
             </div>
             <span style="color: var(--text-muted); font-size: 0.9rem;">Sept 2024 – Oct 2024</span>
         </div>
         <ul style="color: #cbd5e1; line-height: 1.6;">
-            <li>Designed and developed interactive data visualizations to communicate insights from structured datasets.</li>
-            <li>Worked with data cleaning, exploratory analysis, and visualization techniques to support analytical decision-making.</li>
+            <li>Engineered data cleaning and transformation pipelines to handle complex, multi-source business datasets.</li>
+            <li>Architected interactive dashboards using Power BI/Tableau to visualize core KPIs and revenue trends.</li>
+            <li>Performed exploratory data analysis (EDA) to identify statistically significant patterns in global sales data.</li>
+            <li>Developed technical visualizations to bridge the gap between raw data structures and executive business intelligence.</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # British Airways (Virtual)
+    st.markdown("""
+    <div class="glass-card">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+            <div>
+                <h3 style="margin: 0; color: #fff;">British Airways (Virtual)</h3>
+                <p style="margin: 0; color: var(--primary-color); font-weight: 600;">Data Science Intern</p>
+            </div>
+            <span style="color: var(--text-muted); font-size: 0.9rem;">Oct 2024 – Nov 2024</span>
+        </div>
+        <ul style="color: #cbd5e1; line-height: 1.6;">
+            <li>Developed a web scraping pipeline using Python to extract and preprocess unstructured customer review data.</li>
+            <li>Quantified customer satisfaction trends using NLTK/VADER sentiment analysis to identify service pain points.</li>
+            <li>Engineered a predictive classification model to forecast customer booking behavior using advanced feature selection.</li>
+            <li>Utilized Mutual Information (MI) scores to optimize model performance and identify key drivers of ticket conversions.</li>
         </ul>
     </div>
     """, unsafe_allow_html=True)
@@ -375,7 +396,7 @@ with col2:
         </div>
         <ul style="color: #cbd5e1; line-height: 1.6;">
             <li>Built a weather-focused ML solution in collaboration with teammates as part of the world’s largest global hackathon.</li>
-            <li>Project selected among <b>top 1,900 international projects</b> out of 18,500+ submissions.</li>
+            <li>Project selected as a <b>Global Nominee</b>, ranking among the top 1,900 international projects globally.</li>
         </ul>
     </div>
     """, unsafe_allow_html=True)
@@ -462,6 +483,23 @@ project_item(
     "https://github.com/introverthacker11/CompVision-AI-GeoVisionID-FaceRecognitionSystem"
 )
 
+# Project 6
+project_item(
+    "6️⃣ PSO-FinanceBot",
+    "PSO-FinanceBot is a RAG-powered system for analyzing PSO annual reports (FY21–FY25). It uses a hybrid search approach, combining FAISS for semantic depth and BM25 for keyword precision, providing accurate financial insights via a local Llama 3.2 engine.",
+    ["RAG", "Llama 3.2", "FAISS", "BM25", "LangChain", "Streamlit", "Python"],
+    "pso_video.mp4",
+    "https://github.com/introverthacker11/PSO-FinanceBot-RAG"
+)
+
+# Project 7
+project_item(
+    "7️⃣ AI-DataAnalyst-Agent",
+    "An AI multi-tool agent leveraging the Model Context Protocol (MCP) and Llama 3.2 to perform dynamic data analysis, automated visualization, and statistical modeling on CSV/Excel files with fully local, secure Python execution.",
+    ["MCP", "Llama 3.2", "Data Science", "Pandas", "Matplotlib", "Streamlit", "Ollama"],
+    "ai_data_analyst.mp4",
+    "https://github.com/introverthacker11/AI-DataAnalyst-MCP"
+)
 
 # --- EDUCATION SECTION ---
 st.markdown('<div id="education" class="section-header"><h2 class="section-title">Education</h2><div class="section-divider"></div></div>', unsafe_allow_html=True)
