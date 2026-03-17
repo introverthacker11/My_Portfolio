@@ -284,13 +284,13 @@ with col2:
     st.markdown("""
     <div class="glass-card">
         <p style="font-size: 1.1rem; line-height: 1.8; color: #cbd5e1; text-align: center;">
-            I’m Rayyan, a software engineer fascinated by building end-to-end ML systems, scalable backends, and interactive AI applications. 
-            What excites me most isn’t just making things work—it’s peeling back the layers to understand why they work, 
-            from model architectures to training dynamics. I love digging into the theory that powers practical solutions.
+            I’m Rayyan, an AI Engineer dedicated to architecting end-to-end RAG systems, agentic workflows, and high-performance Generative AI applications. 
+            What excites me most isn’t just model deployment—it’s diving into the mechanics of why they perform, from fine-tuning dynamics to the nuances of latent space. 
+            I thrive on bridging deep theoretical research with practical, production-ready AI solutions.
             <br><br>
-            I thrive on tackling projects where the path isn’t clear. Some of my most rewarding experiences have come from 
-            navigating unfamiliar challenges and figuring them out along the way. I’ve learned that growth comes from 
-            curiosity and persistence, not having all the answers upfront.
+            I excel in building in the "gray area" where benchmarks are undefined. My most rewarding projects involve engineering through technical ambiguity—optimizing 
+            local LLM inference or scaling complex data pipelines. I’ve found that true innovation in AI stems from a mix of rigorous curiosity and the persistence 
+            to debug until a vision becomes a functional reality.
         </p>
     </div>
     """, unsafe_allow_html=True)
