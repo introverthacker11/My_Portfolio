@@ -21,7 +21,7 @@ def local_css():
         --neon-purple: #b537f2;
         --neon-pink: #ff006e;
         --bg-color: #0a0e27;
-        --card-bg: rgba(15, 25, 50, 0.6);
+        --card-bg: rgba(15, 25, 50, 0.7);
         --text-main: #f8fafc;
         --text-muted: #94a3b8;
         --accent-glow: rgba(0, 210, 255, 0.3);
@@ -32,9 +32,14 @@ def local_css():
         padding: 0;
     }
 
+    /* CUSTOM BACKGROUND IMAGE */
     html, body, [data-testid="stAppViewContainer"] {
-        background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f172a 100%) !important;
+        background-image: linear-gradient(rgba(10, 14, 39, 0.7), rgba(10, 14, 39, 0.7)), 
+                          url("https://www.shutterstock.com/image-illustration/abstract-digital-visualization-glowing-teal-600nw-2753653119.jpg") !important;
+        background-size: cover !important;
+        background-position: center !important;
         background-attachment: fixed !important;
+        color: white !important;
     }
 
     [data-testid="stAppViewContainer"] {
@@ -151,111 +156,47 @@ def local_css():
 
     .hero-subtitle {
         font-size: 1.3rem;
-        color: #94a3b8;
+        color: #f8fafc;
         max-width: 900px;
         margin: 0 auto 3rem auto;
         line-height: 1.8;
         text-align: center;
-        animation: fadeInUp 1s ease-out 0.3s both;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
     }
 
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    /* Buttons Styling */
+    .secondary-btn, div.stDownloadButton > button {
+        background: rgba(0, 210, 255, 0.1) !important;
+        color: #00d2ff !important;
+        padding: 0.8rem 2rem !important;
+        border-radius: 12px !important;
+        text-decoration: none !important;
+        font-weight: 700 !important;
+        border: 2px solid rgba(0, 210, 255, 0.4) !important;
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+        font-family: 'Space Mono', monospace !important;
+        letter-spacing: 1px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: auto !important;
+        width: auto !important;
+        cursor: pointer !important;
+        line-height: 1.2 !important;
     }
 
-    /* Buttons */
-    .btn-container {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-bottom: 3rem;
+    .secondary-btn:hover, div.stDownloadButton > button:hover {
+        background: rgba(0, 210, 255, 0.25) !important;
+        border-color: #00d2ff !important;
+        color: white !important;
+        transform: translateY(-3px) !important;
+        box-shadow: 0 0 30px rgba(0, 210, 255, 0.4) !important;
     }
 
-    .primary-btn {
-        background: linear-gradient(135deg, #00d2ff, #b537f2);
-        color: white;
-        padding: 1rem 2.5rem;
-        border-radius: 12px;
-        text-decoration: none;
-        font-weight: 700;
-        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        box-shadow: 0 0 20px rgba(0, 210, 255, 0.4), 0 8px 20px rgba(0, 210, 255, 0.2);
-        border: 2px solid rgba(0, 210, 255, 0.3);
-        position: relative;
-        overflow: hidden;
-        font-family: 'Space Mono', monospace;
-        letter-spacing: 1px;
-        display: inline-block;
-    }
-
-    .primary-btn::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.5s;
-    }
-
-    .primary-btn:hover {
-        transform: translateY(-5px) scale(1.05);
-        box-shadow: 0 0 40px rgba(0, 210, 255, 0.6), 0 15px 40px rgba(0, 210, 255, 0.3);
-        border-color: #00d2ff;
-    }
-
-    .primary-btn:hover::before {
-        left: 100%;
-    }
-
-    .secondary-btn {
-        background: rgba(0, 210, 255, 0.08);
-        color: #00d2ff;
-        padding: 1rem 2.5rem;
-        border-radius: 12px;
-        text-decoration: none;
-        font-weight: 700;
-        border: 2px solid rgba(0, 210, 255, 0.4);
-        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        position: relative;
-        overflow: hidden;
-        font-family: 'Space Mono', monospace;
-        letter-spacing: 1px;
-        display: inline-block;
-    }
-
-    .secondary-btn::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background: rgba(0, 210, 255, 0.2);
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        transition: width 0.6s, height 0.6s;
-    }
-
-    .secondary-btn:hover {
-        background: rgba(0, 210, 255, 0.15);
-        border-color: #00d2ff;
-        color: white;
-        transform: translateY(-3px);
-        box-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
-    }
-
-    .secondary-btn:hover::after {
-        width: 300px;
-        height: 300px;
+    /* Force Download Button to look like others */
+    div.stDownloadButton > button {
+        margin: 0 !important;
+        font-size: 0.9rem !important;
     }
 
     /* Section Headers */
@@ -284,137 +225,50 @@ def local_css():
         margin: 0 auto;
         border-radius: 2px;
         box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
-        animation: dividerExpand 2s ease-in-out infinite;
-    }
-
-    @keyframes dividerExpand {
-        0%, 100% { width: 80px; }
-        50% { width: 120px; }
     }
 
     /* Cards */
     .glass-card {
-        background: linear-gradient(135deg, rgba(15, 25, 50, 0.7), rgba(30, 41, 59, 0.5));
+        background: linear-gradient(135deg, rgba(15, 25, 50, 0.85), rgba(30, 41, 59, 0.7));
         backdrop-filter: blur(15px);
         border: 2px solid rgba(0, 210, 255, 0.2);
         border-radius: 20px;
         padding: 2.5rem;
         margin-bottom: 2.5rem;
-        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 8px 32px rgba(0, 210, 255, 0.1);
-    }
-
-    .glass-card::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        right: -50%;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle, rgba(0, 210, 255, 0.1) 0%, transparent 70%);
-        transition: all 0.6s ease;
-        opacity: 0;
+        transition: all 0.4s ease;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
 
     .glass-card:hover {
         border-color: rgba(0, 210, 255, 0.5);
-        transform: translateY(-8px) scale(1.02);
-        background: linear-gradient(135deg, rgba(15, 25, 50, 0.9), rgba(30, 41, 59, 0.7));
-        box-shadow: 0 0 40px rgba(0, 210, 255, 0.3), 0 15px 40px rgba(0, 210, 255, 0.15);
-    }
-
-    .glass-card:hover::before {
-        opacity: 1;
-        top: -25%;
-        right: -25%;
-    }
-
-    /* Project Cards */
-    .project-card {
-        background: linear-gradient(135deg, rgba(15, 25, 50, 0.7), rgba(30, 41, 59, 0.5));
-        border-radius: 20px;
-        overflow: hidden;
-        border: 2px solid rgba(0, 210, 255, 0.2);
-        margin-bottom: 3rem;
-        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        position: relative;
-        box-shadow: 0 8px 32px rgba(0, 210, 255, 0.1);
-    }
-    
-    .project-card:hover {
-        border-color: rgba(0, 210, 255, 0.5);
-        transform: translateY(-10px);
-        box-shadow: 0 0 40px rgba(0, 210, 255, 0.3), 0 20px 40px rgba(0, 210, 255, 0.15);
-    }
-
-    .project-content {
-        padding: 2rem;
-        position: relative;
-        z-index: 2;
-    }
-
-    .tag-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.7rem;
-        margin-top: 1.5rem;
+        transform: translateY(-5px);
+        box-shadow: 0 0 40px rgba(0, 210, 255, 0.2);
     }
 
     .tag {
-        background: linear-gradient(135deg, rgba(0, 210, 255, 0.15), rgba(181, 55, 242, 0.15));
+        background: linear-gradient(135deg, rgba(0, 210, 255, 0.2), rgba(181, 55, 242, 0.2));
         color: #00d2ff;
         padding: 0.5rem 1rem;
         border-radius: 50px;
         font-size: 0.8rem;
         font-weight: 700;
         border: 1px solid rgba(0, 210, 255, 0.3);
-        transition: all 0.3s ease;
         font-family: 'Space Mono', monospace;
-        letter-spacing: 0.5px;
     }
 
-    .tag:hover {
-        background: linear-gradient(135deg, rgba(0, 210, 255, 0.3), rgba(181, 55, 242, 0.3));
-        box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
-        transform: scale(1.1);
-    }
-
-    /* Video Sizing */
     .video-wrapper {
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
         border-radius: 16px;
         overflow: hidden;
         border: 2px solid rgba(0, 210, 255, 0.3);
         box-shadow: 0 0 30px rgba(0, 210, 255, 0.2);
-        transition: all 0.4s ease;
     }
 
-    .video-wrapper:hover {
-        box-shadow: 0 0 50px rgba(0, 210, 255, 0.4);
-        transform: scale(1.05);
-    }
-
-    /* Footer */
     .footer {
         padding: 5rem 2rem;
         margin-top: 8rem;
         border-top: 2px solid rgba(0, 210, 255, 0.2);
         text-align: center;
-        color: #94a3b8;
-        background: linear-gradient(180deg, transparent, rgba(0, 210, 255, 0.05));
-        position: relative;
-        z-index: 10;
-    }
-
-    .footer h3 {
-        background: linear-gradient(135deg, #00d2ff, #b537f2);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        background: rgba(10, 14, 39, 0.9);
     }
 
     #MainMenu {visibility: hidden;}
@@ -424,31 +278,9 @@ def local_css():
     /* Responsive */
     @media (max-width: 768px) {
         .hero-title { font-size: 2.5rem; }
-        .section-title { font-size: 2rem; }
         .nav-container { gap: 1rem; padding: 0.8rem; flex-wrap: wrap; }
-        .nav-link { font-size: 0.7rem; letter-spacing: 0.5px; }
-        .hero-subtitle { font-size: 1rem; }
+        .nav-link { font-size: 0.7rem; }
     }
-
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-        width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: rgba(0, 210, 255, 0.05);
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: linear-gradient(180deg, #00d2ff, #b537f2);
-        border-radius: 5px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(180deg, #b537f2, #ff006e);
-        box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
-    }
-
     </style>
     """, unsafe_allow_html=True)
 
@@ -477,35 +309,32 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-st.write("")  # Spacer
-
 # --- BUTTONS ---
-col1, col2, col3, col4, col5, col6, col7, col8, col9 = st.columns(9)
+col1, col2, col3, col4, col5, col6, col7 = st.columns([1, 1, 1, 1, 1, 1, 1])
 
-with col4:
+with col3:
     st.markdown(
         '<a href="https://www.linkedin.com/in/rayyan-ahmed-504725321/" target="_blank" class="secondary-btn">LinkedIn</a>',
         unsafe_allow_html=True
     )
 
-with col5:
+with col4:
     st.markdown(
         '<a href="https://github.com/introverthacker11" target="_blank" class="secondary-btn">GitHub</a>',
         unsafe_allow_html=True
     )
 
-with col6:
+with col5:
     try:
         with open("RayyanAhmedResume.pdf", "rb") as file:
             st.download_button(
-                label="Download Resume",
+                label="Resume",
                 data=file,
                 file_name="Rayyan_Ahmed_Resume.pdf",
                 mime="application/pdf",
-                use_container_width=True
             )
     except:
-        st.info("Resume file not found")
+        st.info("Resume not found")
 
 st.write("")  # Spacer
 
@@ -516,7 +345,7 @@ col1, col2, col3 = st.columns([1, 6, 1])
 with col2:
     st.markdown("""
     <div class="glass-card">
-        <p style="font-size: 1.1rem; line-height: 1.8; color: #cbd5e1; text-align: center;">
+        <p style="font-size: 1.1rem; line-height: 1.8; color: #e2e8f0; text-align: center;">
             I'm Rayyan, an AI Engineer dedicated to architecting end-to-end RAG systems, agentic workflows, and high-performance Generative AI applications. 
             What excites me most isn't just model deployment—it's diving into the mechanics of why they perform, from fine-tuning dynamics to the nuances of latent space. 
             I thrive on bridging deep theoretical research with practical, production-ready AI solutions.
@@ -528,8 +357,6 @@ with col2:
     </div>
     """, unsafe_allow_html=True)
 
-st.write("")  # Spacer
-
 # --- SKILLS SECTION ---
 st.markdown(
     '<div class="section-header"><h2 class="section-title">Skills & Expertise</h2><div class="section-divider"></div></div>',
@@ -537,33 +364,15 @@ st.markdown(
 )
 
 skill_categories = {
-    "Core AI & Modeling": [
-        "Machine Learning", "Deep Learning", "Reinforcement Learning", 
-        "Model Evaluation", "Research & Experimentation"
-    ],
-    "Generative AI & LLMs": [
-        "Large Language Models (LLMs)", "Generative AI", "Prompt Engineering", 
-        "RAG", "AI Agents", "Model Fine-Tuning"
-    ],
-    "NLP & Vision": [
-        "Natural Language Processing (NLP)", "Computer Vision", 
-        "Feature Engineering", "Data Preprocessing"
-    ],
-    "Data & Analytics": [
-        "Data Analysis", "Data Visualization", "Statistical Analysis", 
-        "Pandas / NumPy / SQL", "Scikit-learn"
-    ],
-    "Engineering & Ops": [
-        "Python Development", "Streamlit / Web Dev", "MLOps", 
-        "AI Model Deployment", "API Integration (REST / NASA)"
-    ],
-    "Tools & Frameworks": [
-        "TensorFlow / Keras", "Git / GitHub", "Full Stack Development"
-    ]
+    "Core AI": ["Machine Learning", "Deep Learning", "Reinforcement Learning", "Model Evaluation"],
+    "Gen AI": ["LLMs", "Generative AI", "Prompt Engineering", "RAG", "AI Agents", "Fine-Tuning"],
+    "NLP & Vision": ["NLP", "Computer Vision", "Feature Engineering", "Data Preprocessing"],
+    "Data": ["Data Analysis", "Visualization", "SQL", "Pandas", "Scikit-learn"],
+    "Engineering": ["Python", "Streamlit", "MLOps", "Model Deployment", "APIs"],
+    "Tools": ["TensorFlow", "Keras", "Git", "Full Stack"]
 }
 
 all_skills = [item for sublist in skill_categories.values() for item in sublist]
-
 col1, col2, col3, col4, col5, col6 = st.columns([1, 2, 2, 2, 2, 1])
 skill_cols = [col2, col3, col4, col5]
 
@@ -572,17 +381,10 @@ for i, skill in enumerate(all_skills):
         st.markdown(
             f"""
             <div class="glass-card" style="
-                text-align: center;
-                padding: 15px 8px;
-                margin-bottom: 15px;
-                font-size: 0.89rem;
-                font-weight: 600;
-                color: #e5e7eb;
-                border: 2px solid rgba(0, 210, 255, 0.2);
-                border-radius: 10px;
-                background: linear-gradient(135deg, rgba(0, 210, 255, 0.08), rgba(181, 55, 242, 0.08));
-                transition: all 0.3s ease;
-                cursor: pointer;
+                text-align: center; padding: 12px 5px; margin-bottom: 12px;
+                font-size: 0.85rem; font-weight: 600; color: #e5e7eb;
+                border: 1px solid rgba(0, 210, 255, 0.3); border-radius: 10px;
+                background: rgba(0, 210, 255, 0.05);
             ">
                 {skill}
             </div>
@@ -590,90 +392,58 @@ for i, skill in enumerate(all_skills):
             unsafe_allow_html=True
         )
 
-st.write("")  # Spacer
-
 # --- EXPERIENCE SECTION ---
 st.markdown('<div id="experience" class="section-header"><h2 class="section-title">Experience</h2><div class="section-divider"></div></div>', unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns([1, 6, 1])
 with col2:
-    st.markdown("""
-    <div class="glass-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-            <div>
-                <h3 style="margin: 0; color: #fff; font-size: 1.3rem;">TATA Group (Virtual)</h3>
-                <p style="margin: 0; color: #00d2ff; font-weight: 700; font-size: 1rem;">Data Visualization Intern</p>
+    experiences = [
+        {"title": "Data Visualization Intern", "company": "TATA Group (Virtual)", "date": "Sept 2024 – Oct 2024", "points": [
+            "Engineered data cleaning and transformation pipelines to handle complex business datasets.",
+            "Architected interactive dashboards using Power BI/Tableau to visualize core KPIs.",
+            "Performed EDA to identify significant patterns in global sales data."
+        ]},
+        {"title": "Data Science Intern", "company": "British Airways (Virtual)", "date": "Oct 2024 – Nov 2024", "points": [
+            "Developed a web scraping pipeline using Python for customer review data.",
+            "Quantified satisfaction trends using NLTK/VADER sentiment analysis.",
+            "Engineered a predictive classification model for booking behavior."
+        ]},
+        {"title": "ML & Data Science Team Member", "company": "NASA Space Apps Challenge", "date": "June 2025 – Sept 2025", "points": [
+            "Built a weather-focused ML solution for the global hackathon.",
+            "Project selected as a Global Nominee, ranking in the top 1,900 globally."
+        ]}
+    ]
+    
+    for exp in experiences:
+        st.markdown(f"""
+        <div class="glass-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                <div>
+                    <h3 style="margin: 0; color: #fff; font-size: 1.3rem;">{exp['company']}</h3>
+                    <p style="margin: 0; color: #00d2ff; font-weight: 700;">{exp['title']}</p>
+                </div>
+                <span style="color: #94a3b8; font-family: 'Space Mono', monospace;">{exp['date']}</span>
             </div>
-            <span style="color: #94a3b8; font-size: 0.9rem; font-family: 'Space Mono', monospace;">Sept 2024 – Oct 2024</span>
+            <ul style="color: #cbd5e1; line-height: 1.6;">
+                {''.join([f'<li>{p}</li>' for p in exp['points']])}
+            </ul>
         </div>
-        <ul style="color: #cbd5e1; line-height: 1.8; font-size: 0.95rem;">
-            <li>Engineered data cleaning and transformation pipelines to handle complex, multi-source business datasets.</li>
-            <li>Architected interactive dashboards using Power BI/Tableau to visualize core KPIs and revenue trends.</li>
-            <li>Performed exploratory data analysis (EDA) to identify statistically significant patterns in global sales data.</li>
-            <li>Developed technical visualizations to bridge the gap between raw data structures and executive business intelligence.</li>
-        </ul>
-    </div>
-    """, unsafe_allow_html=True)
-
-    st.markdown("""
-    <div class="glass-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-            <div>
-                <h3 style="margin: 0; color: #fff; font-size: 1.3rem;">British Airways (Virtual)</h3>
-                <p style="margin: 0; color: #00d2ff; font-weight: 700; font-size: 1rem;">Data Science Intern</p>
-            </div>
-            <span style="color: #94a3b8; font-size: 0.9rem; font-family: 'Space Mono', monospace;">Oct 2024 – Nov 2024</span>
-        </div>
-        <ul style="color: #cbd5e1; line-height: 1.8; font-size: 0.95rem;">
-            <li>Developed a web scraping pipeline using Python to extract and preprocess unstructured customer review data.</li>
-            <li>Quantified customer satisfaction trends using NLTK/VADER sentiment analysis to identify service pain points.</li>
-            <li>Engineered a predictive classification model to forecast customer booking behavior using advanced feature selection.</li>
-            <li>Utilized Mutual Information (MI) scores to optimize model performance and identify key drivers of ticket conversions.</li>
-        </ul>
-    </div>
-    """, unsafe_allow_html=True)
-
-    st.markdown("""
-    <div class="glass-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-            <div>
-                <h3 style="margin: 0; color: #fff; font-size: 1.3rem;">NASA Space Apps Challenge</h3>
-                <p style="margin: 0; color: #00d2ff; font-weight: 700; font-size: 1rem;">ML & Data Science Team Member</p>
-            </div>
-            <span style="color: #94a3b8; font-size: 0.9rem; font-family: 'Space Mono', monospace;">June 2025 – Sept 2025</span>
-        </div>
-        <ul style="color: #cbd5e1; line-height: 1.8; font-size: 0.95rem;">
-            <li>Built a weather-focused ML solution in collaboration with teammates as part of the world's largest global hackathon.</li>
-            <li>Project selected as a <b>Global Nominee</b>, ranking among the <b>top 1,900</b> out of 18500+ international projects globally.</li>
-        </ul>
-    </div>
-    """, unsafe_allow_html=True)
-
-st.write("")  # Spacer
+        """, unsafe_allow_html=True)
 
 # --- PROJECTS SECTION ---
 st.markdown('<div id="projects" class="section-header"><h2 class="section-title">Projects</h2><div class="section-divider"></div></div>', unsafe_allow_html=True)
 
 def project_item(title, desc, tags, video_path, github_url):
-    col, col_text, col_vid, cool = st.columns([0.34, 1.5, 1, 0.34], gap="medium")
+    col, col_text, col_vid, cool = st.columns([0.2, 1.5, 1, 0.2], gap="medium")
     with col_text:
         st.markdown(f"""
         <div class="project-content">
-            <h3 style="color: #fff; margin-top: 0; font-size: 1.3rem;">{title}</h3>
-            <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6;">{desc}</p>
+            <h3 style="color: #fff; margin-top: 0;">{title}</h3>
+            <p style="color: #cbd5e1; font-size: 0.95rem;">{desc}</p>
             <div class="tag-container" style="margin-bottom: 1.5rem;">
                 {''.join([f'<span class="tag">{tag}</span>' for tag in tags])}
             </div>
-            <br>
-            <a href="{github_url}" target="_blank" class="secondary-btn" 
-            style="
-                font-size: 0.95rem; 
-                padding: 0.7rem 1.5rem; 
-                text-decoration: none; 
-                display: inline-block;
-            ">
-                View Source Code ↗
-            </a>
+            <a href="{github_url}" target="_blank" class="secondary-btn">View Code ↗</a>
         </div>
         """, unsafe_allow_html=True)
     with col_vid:
@@ -683,82 +453,32 @@ def project_item(title, desc, tags, video_path, github_url):
         except:
             st.info(f"Video: {title}")
         st.markdown('</div>', unsafe_allow_html=True)
-    st.markdown("<hr style='border: 1px solid rgba(0, 210, 255, 0.2); margin: 2rem 0;'>", unsafe_allow_html=True)
+    st.markdown("<hr style='border: 1px solid rgba(0, 210, 255, 0.1); margin: 3rem 0;'>", unsafe_allow_html=True)
 
-# Project 1
-project_item(
-    "1️⃣ AI VisionLock",
-    "AI VisionLock is a real-time single object tracking system that maintains accurate object localization across video frames, even under motion and partial occlusion.",
-    ["CompVision", "OpenCV", "Template Matching", "Object Tracking", "Streamlit"],
-    "video2_finaloutput.mp4",
-    "https://github.com/introverthacker11/CompVision-AIVisionLock-ObjectTrackingSystem___r38"
-)
+projects = [
+    ("1️⃣ AI VisionLock", "Real-time object tracking system.", ["CompVision", "OpenCV", "Tracking"], "video2_finaloutput.mp4", "https://github.com/introverthacker11/CompVision-AIVisionLock-ObjectTrackingSystem___r38"),
+    ("2️⃣ Face Verification", "Secure identity authentication system.", ["YOLOv8", "Deep Learning"], "faceVS.mp4", "https://github.com/introverthacker11/CompVision-FaceVerificationSystem___r35"),
+    ("3️⃣ UrbanSeg-AI", "Semantic segmentation for urban environments.", ["YOLOv8", "Segmentation"], "city view output.mp4", "https://github.com/introverthacker11/CompVision-UrbanSegAI___r37"),
+    ("4️⃣ SafeSight-AI", "PPE detection and tracking system.", ["YOLOv8", "Safety"], "ppe_detected.mp4", "https://github.com/introverthacker11/CompVision-SafeSightAI-PPE-DetectionSystem___r36"),
+    ("5️⃣ AI-GeoVisionID", "Real-time world leader face recognition.", ["ArcFace", "DeepFace"], "output_world_leaders_arrive.mp4", "https://github.com/introverthacker11/CompVision-AI-GeoVisionID-FaceRecognitionSystem"),
+    ("6️⃣ PSO-FinanceBot", "RAG-powered financial report analyzer.", ["RAG", "Llama 3.2", "FAISS"], "pso_video.mp4", "https://github.com/introverthacker11/PSO-FinanceBot-RAG"),
+    ("7️⃣ AI-DataAnalyst", "MCP-based automated data analysis agent.", ["MCP", "Llama 3.2", "Pandas"], "ai_data_analyst.mp4", "https://github.com/introverthacker11/AI-DataAnalyst-MCP")
+]
 
-# Project 2
-project_item(
-    "2️⃣ AI-DataAnalyst-Agent",
-    "An AI multi-tool agent leveraging the Model Context Protocol (MCP) and Llama 3.2 to perform dynamic data analysis, automated visualization, and statistical modeling on CSV/Excel files with fully local, secure Python execution.",
-    ["MCP", "Llama 3.2", "Data Science", "Pandas", "Matplotlib", "Streamlit", "Ollama"],
-    "ai_data_analyst.mp4",
-    "https://github.com/introverthacker11/AI-DataAnalyst-MCP"
-)
+for p in projects:
+    project_item(*p)
 
-# Project 3
-project_item(
-    "3️⃣ UrbanSeg-AI",
-    "UrbanSeg-AI is an AI-powered semantic and instance segmentation system for urban environments, capable of identifying roads, vehicles, buildings, and pedestrians in real time.",
-    ["CompVision", "YOLOv8", "Instance Segmentation", "Python", "Streamlit"],
-    "city view output.mp4",
-    "https://github.com/introverthacker11/CompVision-UrbanSegAI___r37"
-)
-
-# Project 4
-project_item(
-    "4️⃣ SafeSight-AI",
-    "SafeSight-AI is an AI-powered PPE detection and tracking system that identifies safety equipment such as helmets and vests in real time to improve workplace safety compliance.",
-    ["CompVision", "YOLOv8", "PPE Detection", "Python", "Streamlit"],
-    "ppe_detected.mp4",
-    "https://github.com/introverthacker11/CompVision-SafeSightAI-PPE-DetectionSystem___r36"
-)
-
-# Project 5
-project_item(
-    "5️⃣ AI-GeoVisionID",
-    "AI-GeoVisionID is a real-time face recognition system that detects and identifies world leaders from images and videos using deep facial embeddings, even under varying lighting and pose conditions.",
-    ["Computer Vision", "YOLOv8", "ArcFace", "DeepFace", "OpenCV", "Streamlit", "Face Recognition"],
-    "output_world_leaders_arrive.mp4",
-    "https://github.com/introverthacker11/CompVision-AI-GeoVisionID-FaceRecognitionSystem"
-)
-
-# Project 6
-project_item(
-    "6️⃣ PSO-FinanceBot",
-    "PSO-FinanceBot is a RAG-powered system for analyzing PSO annual reports (FY21–FY25). It uses a hybrid search approach, combining FAISS for semantic depth and BM25 for keyword precision, providing accurate financial insights via a local Llama 3.2 engine.",
-    ["RAG", "Llama 3.2", "FAISS", "BM25", "LangChain", "Streamlit", "Python"],
-    "pso_video.mp4",
-    "https://github.com/introverthacker11/PSO-FinanceBot-RAG"
-)
-
-st.write("")  # Spacer
-
-# --- EDUCATION SECTION ---
+# --- EDUCATION & CREDENTIALS ---
 st.markdown('<div id="education" class="section-header"><h2 class="section-title">Education</h2><div class="section-divider"></div></div>', unsafe_allow_html=True)
+st.markdown("""
+<div class="glass-card" style="text-align: center; max-width: 800px; margin: 0 auto;">
+    <h3 style="color: #fff;">Dawood University of Engineering and Technology</h3>
+    <p style="color: #00d2ff; font-weight: 700; font-size: 1.2rem;">Bachelor of Science in Artificial Intelligence</p>
+    <p style="color: #94a3b8; font-family: 'Space Mono', monospace;">2022 — 2026</p>
+</div>
+""", unsafe_allow_html=True)
 
-col1, col2, col3 = st.columns([1, 6, 1])
-with col2:
-    st.markdown("""
-    <div class="glass-card" style="text-align: center;">
-        <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.3rem;">Dawood University of Engineering and Technology</h3>
-        <p style="color: #00d2ff; font-weight: 700; font-size: 1.2rem; margin-bottom: 1rem;">Bachelor of Science in Artificial Intelligence</p>
-        <p style="color: #94a3b8; margin-bottom: 1.5rem; font-family: 'Space Mono', monospace;">2022 — 2026</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-st.write("")  # Spacer
-
-# --- CREDENTIALS SECTION ---
 st.markdown('<div id="credentials" class="section-header"><h2 class="section-title">Credentials</h2><div class="section-divider"></div></div>', unsafe_allow_html=True)
-
 cred_col1, cred_col2 = st.columns(2)
 credentials = [
     {"title": "AI Prompt Engineering Specialist", "org": "Google · Coursera", "link": "https://www.coursera.org/account/accomplishments/specialization/90FPSDSJ86C6"},
@@ -770,28 +490,21 @@ for i, cred in enumerate(credentials):
     with cred_col1 if i % 2 == 0 else cred_col2:
         st.markdown(f"""
         <div class="glass-card" style="padding: 1.5rem;">
-            <h4 style="margin: 0 0 0.5rem 0; color: #fff; font-size: 1.1rem;">{cred['title']}</h4>
-            <p style="margin: 0 0 1rem 0; color: #00d2ff; font-size: 0.9rem; font-family: 'Space Mono', monospace;">{cred['org']}</p>
-            <a href="{cred['link']}" target="_blank" class="secondary-btn" style="padding: 0.4rem 1rem; font-size: 0.8rem; display: inline-block;">Verify</a>
+            <h4 style="margin: 0 0 0.5rem 0; color: #fff;">{cred['title']}</h4>
+            <p style="margin: 0 0 1rem 0; color: #00d2ff; font-size: 0.9rem;">{cred['org']}</p>
+            <a href="{cred['link']}" target="_blank" class="secondary-btn" style="padding: 0.4rem 1rem; font-size: 0.8rem;">Verify</a>
         </div>
         """, unsafe_allow_html=True)
-
-st.write("")  # Spacer
 
 # --- FOOTER ---
 st.markdown("""
 <div class="footer">
-    <div style="margin-bottom: 1.5rem;">
-        <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem;">Rayyan Ahmed</h3>
-        <p style="color: #94a3b8;">AI Engineer & Problem Solver</p>
-    </div>
+    <h3 style="margin-bottom: 0.5rem;">Rayyan Ahmed</h3>
+    <p style="color: #94a3b8; margin-bottom: 2rem;">AI Engineer & Problem Solver</p>
     <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem;">
-        <a href="https://www.linkedin.com/in/rayyan-ahmed-504725321/" target="_blank" style="color: #00d2ff; text-decoration: none; transition: all 0.3s ease; font-weight: 700;">LinkedIn</a>
-        <a href="https://github.com/CodingRayyan" target="_blank" style="color: #00d2ff; text-decoration: none; transition: all 0.3s ease; font-weight: 700;">GitHub</a>
-        <a href="mailto:rayyanabeel22@gmail.com" style="color: #00d2ff; text-decoration: none; transition: all 0.3s ease; font-weight: 700;">Email</a>
+        <a href="https://www.linkedin.com/in/rayyan-ahmed-504725321/" target="_blank" style="color: #00d2ff; text-decoration: none; font-weight: 700;">LinkedIn</a>
+        <a href="https://github.com/CodingRayyan" target="_blank" style="color: #00d2ff; text-decoration: none; font-weight: 700;">GitHub</a>
     </div>
-    <p style="font-size: 0.8rem; color: #94a3b8;">Website made by Rayyan Ahmed (Not AI).</p>
     <p style="font-size: 0.8rem; color: #94a3b8;">© 2026 Rayyan Ahmed.</p>
 </div>
-
 """, unsafe_allow_html=True)
