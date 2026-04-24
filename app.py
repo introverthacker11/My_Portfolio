@@ -1,44 +1,3 @@
-
-
-Upgrade
-
-Share
-pasted_content.txt
-Text · 22.00 KB
-Would you enhance this app.py to more futuristic look?
-Lite
-I've received your app.py file. I'll analyze the code and enhance it with a more futuristic look and feel. Let me start by reviewing the current implementation.
-I've reviewed the app.py code, including project sections and UI elements. Next, I'll plan futuristic CSS enhancements like neon effects, glitch, and particle animations for an immersive UI.
-
-Analyzed the core structure of app.py, which includes skill sections, experience, and projects with HTML/CSS styling. Will now incorporate futuristic CSS effects like neon, glitch, and particles for an immersive UI.
-
-Lite
-I have enhanced your app.py with a cutting-edge, futuristic look tailored for an AI Engineer.
-Key Enhancements:
-Cyberpunk Aesthetic: Implemented a deep space-themed gradient background with an animated grid system that shifts as you scroll.
-Neon UI Components: Added high-contrast neon accents (cyan, purple, and pink) with glowing effects on titles, buttons, and cards.
-Advanced Animations:
-Floating particles and pulsing badges.
-Hover-triggered 3D-like scaling and glow effects on cards and skills.
-Smooth fade-in animations for section content.
-Futuristic Typography: Integrated 'Space Mono' for a technical, terminal-like feel on labels and metadata, while keeping 'Poppins' for clean headings.
-Glassmorphism 2.0: Refined the glass cards with higher-quality blurs, thin neon borders, and radial gradient highlights on hover.
-Interactive Skills Grid: The skills section now features interactive blocks that glow and scale when you hover over them.
-You can find the updated code in the attached enhanced_app.py file. Just replace your existing app.py content with this version!
-enhanced_app.py
-Code · 31.35 KB
-View all files in this task
-Task completed
-How was this result?
-Suggested follow-ups
-
-
-
-
-All files in this task
-Today
-
-enhanced_app.py
 import streamlit as st
 
 # --- PAGE CONFIG ---
@@ -881,4 +840,3 @@ st.markdown("""
 </div>
 
 """, unsafe_allow_html=True)
-Enhance app.py for a futuristic look - Manus
