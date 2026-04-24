@@ -260,7 +260,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- HERO SECTION ---
-# --- HERO SECTION ---
 st.markdown("""
 <div class="hero-container" id="intro">
     <div class="hero-badge">AVAILABLE FOR OPPORTUNITIES</div>
@@ -274,21 +273,21 @@ st.markdown("""
 
 # --------
 
-col1, col2, col3 = st.columns(3)
+col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
 
-with col1:
+with col3:
     st.markdown(
         '<a href="https://www.linkedin.com/in/rayyan-ahmed-504725321/" target="_blank" class="secondary-btn">LinkedIn</a>',
         unsafe_allow_html=True
     )
 
-with col2:
+with col4:
     st.markdown(
         '<a href="https://github.com/introverthacker11" target="_blank" class="secondary-btn">GitHub</a>',
         unsafe_allow_html=True
     )
 
-with col3:
+with col5:
     with open("RayyanAhmedResume.pdf", "rb") as file:
         st.download_button(
             label="Download Resume",
