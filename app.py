@@ -696,11 +696,11 @@ project_item(
 
 # Project 2
 project_item(
-    "2️⃣ Face Verification System",
-    "FaceVerify-AI is an AI-powered face verification system designed to provide secure and reliable identity authentication using computer vision and deep learning techniques.",
-    ["CompVision", "OpenCV", "YOLOv8", "Deep Learning", "Python"],
-    "faceVS.mp4",
-    "https://github.com/introverthacker11/CompVision-FaceVerificationSystem___r35"
+    "2️⃣ AI-DataAnalyst-Agent",
+    "An AI multi-tool agent leveraging the Model Context Protocol (MCP) and Llama 3.2 to perform dynamic data analysis, automated visualization, and statistical modeling on CSV/Excel files with fully local, secure Python execution.",
+    ["MCP", "Llama 3.2", "Data Science", "Pandas", "Matplotlib", "Streamlit", "Ollama"],
+    "ai_data_analyst.mp4",
+    "https://github.com/introverthacker11/AI-DataAnalyst-MCP"
 )
 
 # Project 3
@@ -737,15 +737,6 @@ project_item(
     ["RAG", "Llama 3.2", "FAISS", "BM25", "LangChain", "Streamlit", "Python"],
     "pso_video.mp4",
     "https://github.com/introverthacker11/PSO-FinanceBot-RAG"
-)
-
-# Project 7
-project_item(
-    "7️⃣ AI-DataAnalyst-Agent",
-    "An AI multi-tool agent leveraging the Model Context Protocol (MCP) and Llama 3.2 to perform dynamic data analysis, automated visualization, and statistical modeling on CSV/Excel files with fully local, secure Python execution.",
-    ["MCP", "Llama 3.2", "Data Science", "Pandas", "Matplotlib", "Streamlit", "Ollama"],
-    "ai_data_analyst.mp4",
-    "https://github.com/introverthacker11/AI-DataAnalyst-MCP"
 )
 
 st.write("")  # Spacer
