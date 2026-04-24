@@ -268,11 +268,32 @@ st.markdown("""
         AI Engineer & Problem Solver specializing in <b>AI Development</b> and <b>AI Automation</b>. <br>
         Transforming complex data into intelligent, end-to-end AI products.
     </p>
-    <div class="btn-container">
-        <a href="https://www.linkedin.com/in/rayyan-ahmed-504725321/" target="_blank" class="secondary-btn">LinkedIn</a>
-        <a href="https://github.com/introverthacker11" target="_blank" class="secondary-btn">GitHub</a>
-        <a href="RayyanAhmedResume.pdf" download="Rayyan_Ahmed_Resume.pdf" class="secondary-btn">Download Resume</a>
-    </div>
+    st.markdown('<div class="btn-container">', unsafe_allow_html=True)
+
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.markdown(
+            '<a href="https://www.linkedin.com/in/rayyan-ahmed-504725321/" target="_blank" class="secondary-btn">LinkedIn</a>',
+            unsafe_allow_html=True
+        )
+    
+    with col2:
+        st.markdown(
+            '<a href="https://github.com/introverthacker11" target="_blank" class="secondary-btn">GitHub</a>',
+            unsafe_allow_html=True
+        )
+    
+    with col3:
+        with open("RayyanAhmedResume.pdf", "rb") as file:
+            st.download_button(
+                label="Download Resume",
+                data=file,
+                file_name="Rayyan_Ahmed_Resume.pdf",
+                mime="application/pdf"
+            )
+    
+    st.markdown('</div>', unsafe_allow_html=True)
 </div>
 """, unsafe_allow_html=True)
 
