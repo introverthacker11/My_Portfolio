@@ -30,44 +30,15 @@ def local_css():
     * {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
     }
 
-    .stApp {
-        background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f172a 100%);
-        background-attachment: fixed;
+    html, body, [data-testid="stAppViewContainer"] {
+        background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f172a 100%) !important;
+        background-attachment: fixed !important;
+    }
+
+    [data-testid="stAppViewContainer"] {
         color: white;
-        position: relative;
-        overflow-x: hidden;
-    }
-
-    /* Animated Background Grid */
-    .stApp::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: 
-            linear-gradient(0deg, transparent 24%, rgba(0, 210, 255, 0.05) 25%, rgba(0, 210, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 210, 255, 0.05) 75%, rgba(0, 210, 255, 0.05) 76%, transparent 77%, transparent),
-            linear-gradient(90deg, transparent 24%, rgba(0, 210, 255, 0.05) 25%, rgba(0, 210, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 210, 255, 0.05) 75%, rgba(0, 210, 255, 0.05) 76%, transparent 77%, transparent);
-        background-size: 50px 50px;
-        pointer-events: none;
-        z-index: 0;
-        animation: gridShift 20s linear infinite;
-    }
-
-    @keyframes gridShift {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(50px); }
-    }
-
-    /* Floating Particles */
-    .particle {
-        position: fixed;
-        pointer-events: none;
-        z-index: 1;
     }
 
     /* Navbar */
@@ -76,7 +47,7 @@ def local_css():
         top: 0;
         left: 0;
         width: 100%;
-        background: linear-gradient(180deg, rgba(10, 14, 39, 0.95) 0%, rgba(10, 14, 39, 0.8) 100%);
+        background: linear-gradient(180deg, rgba(10, 14, 39, 0.98) 0%, rgba(10, 14, 39, 0.85) 100%);
         backdrop-filter: blur(20px);
         z-index: 1000;
         padding: 1.2rem 2rem;
@@ -88,7 +59,7 @@ def local_css():
     }
 
     .nav-link {
-        color: var(--text-muted);
+        color: #94a3b8;
         text-decoration: none;
         font-weight: 700;
         font-size: 0.9rem;
@@ -97,6 +68,7 @@ def local_css():
         letter-spacing: 2px;
         position: relative;
         font-family: 'Space Mono', monospace;
+        padding: 0.5rem 0;
     }
 
     .nav-link::before {
@@ -106,13 +78,13 @@ def local_css():
         left: 0;
         width: 0;
         height: 2px;
-        background: linear-gradient(90deg, var(--primary-color), var(--neon-pink));
+        background: linear-gradient(90deg, #00d2ff, #ff006e);
         transition: width 0.4s ease;
     }
 
     .nav-link:hover {
-        color: var(--primary-color);
-        text-shadow: 0 0 20px var(--primary-color), 0 0 40px rgba(0, 210, 255, 0.5);
+        color: #00d2ff;
+        text-shadow: 0 0 20px #00d2ff, 0 0 40px rgba(0, 210, 255, 0.5);
         transform: translateY(-2px);
     }
 
@@ -134,7 +106,7 @@ def local_css():
 
     .hero-badge {
         background: linear-gradient(135deg, rgba(0, 210, 255, 0.15), rgba(181, 55, 242, 0.15));
-        color: var(--primary-color);
+        color: #00d2ff;
         padding: 0.7rem 1.5rem;
         border-radius: 50px;
         font-size: 0.85rem;
@@ -169,7 +141,6 @@ def local_css():
         -webkit-text-fill-color: transparent;
         background-clip: text;
         animation: titleGlow 3s ease-in-out infinite;
-        text-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
         letter-spacing: -1px;
     }
 
@@ -180,7 +151,7 @@ def local_css():
 
     .hero-subtitle {
         font-size: 1.3rem;
-        color: var(--text-muted);
+        color: #94a3b8;
         max-width: 900px;
         margin: 0 auto 3rem auto;
         line-height: 1.8;
@@ -204,10 +175,11 @@ def local_css():
         display: flex;
         justify-content: center;
         gap: 2rem;
+        margin-bottom: 3rem;
     }
 
     .primary-btn {
-        background: linear-gradient(135deg, var(--primary-color), var(--neon-purple));
+        background: linear-gradient(135deg, #00d2ff, #b537f2);
         color: white;
         padding: 1rem 2.5rem;
         border-radius: 12px;
@@ -220,6 +192,7 @@ def local_css():
         overflow: hidden;
         font-family: 'Space Mono', monospace;
         letter-spacing: 1px;
+        display: inline-block;
     }
 
     .primary-btn::before {
@@ -236,7 +209,7 @@ def local_css():
     .primary-btn:hover {
         transform: translateY(-5px) scale(1.05);
         box-shadow: 0 0 40px rgba(0, 210, 255, 0.6), 0 15px 40px rgba(0, 210, 255, 0.3);
-        border-color: var(--primary-color);
+        border-color: #00d2ff;
     }
 
     .primary-btn:hover::before {
@@ -245,7 +218,7 @@ def local_css():
 
     .secondary-btn {
         background: rgba(0, 210, 255, 0.08);
-        color: var(--primary-color);
+        color: #00d2ff;
         padding: 1rem 2.5rem;
         border-radius: 12px;
         text-decoration: none;
@@ -256,6 +229,7 @@ def local_css():
         overflow: hidden;
         font-family: 'Space Mono', monospace;
         letter-spacing: 1px;
+        display: inline-block;
     }
 
     .secondary-btn::after {
@@ -273,7 +247,7 @@ def local_css():
 
     .secondary-btn:hover {
         background: rgba(0, 210, 255, 0.15);
-        border-color: var(--primary-color);
+        border-color: #00d2ff;
         color: white;
         transform: translateY(-3px);
         box-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
@@ -306,7 +280,7 @@ def local_css():
     .section-divider {
         width: 80px;
         height: 4px;
-        background: linear-gradient(90deg, var(--primary-color), var(--neon-purple), var(--neon-pink));
+        background: linear-gradient(90deg, #00d2ff, #b537f2, #ff006e);
         margin: 0 auto;
         border-radius: 2px;
         box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
@@ -390,7 +364,7 @@ def local_css():
 
     .tag {
         background: linear-gradient(135deg, rgba(0, 210, 255, 0.15), rgba(181, 55, 242, 0.15));
-        color: var(--primary-color);
+        color: #00d2ff;
         padding: 0.5rem 1rem;
         border-radius: 50px;
         font-size: 0.8rem;
@@ -430,7 +404,7 @@ def local_css():
         margin-top: 8rem;
         border-top: 2px solid rgba(0, 210, 255, 0.2);
         text-align: center;
-        color: var(--text-muted);
+        color: #94a3b8;
         background: linear-gradient(180deg, transparent, rgba(0, 210, 255, 0.05));
         position: relative;
         z-index: 10;
@@ -447,20 +421,6 @@ def local_css():
     footer {visibility: hidden;}
     header {visibility: hidden;}
 
-    /* Glitch Effect */
-    @keyframes glitch {
-        0% { transform: translate(0); }
-        20% { transform: translate(-2px, 2px); }
-        40% { transform: translate(-2px, -2px); }
-        60% { transform: translate(2px, 2px); }
-        80% { transform: translate(2px, -2px); }
-        100% { transform: translate(0); }
-    }
-
-    .glitch-text {
-        animation: glitch 0.3s ease-in-out;
-    }
-
     /* Responsive */
     @media (max-width: 768px) {
         .hero-title { font-size: 2.5rem; }
@@ -468,11 +428,6 @@ def local_css():
         .nav-container { gap: 1rem; padding: 0.8rem; flex-wrap: wrap; }
         .nav-link { font-size: 0.7rem; letter-spacing: 0.5px; }
         .hero-subtitle { font-size: 1rem; }
-    }
-
-    /* Smooth Scrolling */
-    html {
-        scroll-behavior: smooth;
     }
 
     /* Custom Scrollbar */
@@ -485,12 +440,12 @@ def local_css():
     }
 
     ::-webkit-scrollbar-thumb {
-        background: linear-gradient(180deg, var(--primary-color), var(--neon-purple));
+        background: linear-gradient(180deg, #00d2ff, #b537f2);
         border-radius: 5px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(180deg, var(--neon-purple), var(--neon-pink));
+        background: linear-gradient(180deg, #b537f2, #ff006e);
         box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
     }
 
@@ -522,8 +477,9 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# --------
+st.write("")  # Spacer
 
+# --- BUTTONS ---
 col1, col2, col3, col4, col5, col6, col7, col8, col9 = st.columns(9)
 
 with col4:
@@ -551,7 +507,9 @@ with col6:
     except:
         st.info("Resume file not found")
 
-# --- INTRO SECTION ---
+st.write("")  # Spacer
+
+# --- ABOUT SECTION ---
 st.markdown('<div class="section-header"><h2 class="section-title">About Me</h2><div class="section-divider"></div></div>', unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns([1, 6, 1])
@@ -570,14 +528,14 @@ with col2:
     </div>
     """, unsafe_allow_html=True)
 
-# ---------------- skills -----------------
+st.write("")  # Spacer
 
+# --- SKILLS SECTION ---
 st.markdown(
     '<div class="section-header"><h2 class="section-title">Skills & Expertise</h2><div class="section-divider"></div></div>',
     unsafe_allow_html=True
 )
 
-# Expanded and Categorized Skills
 skill_categories = {
     "Core AI & Modeling": [
         "Machine Learning", "Deep Learning", "Reinforcement Learning", 
@@ -604,7 +562,6 @@ skill_categories = {
     ]
 }
 
-# Flattening the list for your existing grid logic, or you can iterate by category
 all_skills = [item for sublist in skill_categories.values() for item in sublist]
 
 col1, col2, col3, col4, col5, col6 = st.columns([1, 2, 2, 2, 2, 1])
@@ -626,27 +583,28 @@ for i, skill in enumerate(all_skills):
                 background: linear-gradient(135deg, rgba(0, 210, 255, 0.08), rgba(181, 55, 242, 0.08));
                 transition: all 0.3s ease;
                 cursor: pointer;
-            " onmouseover="this.style.boxShadow='0 0 20px rgba(0, 210, 255, 0.3)'; this.style.borderColor='rgba(0, 210, 255, 0.5)'; this.style.transform='scale(1.05)';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='rgba(0, 210, 255, 0.2)'; this.style.transform='scale(1)';">
+            ">
                 {skill}
             </div>
             """,
             unsafe_allow_html=True
         )
 
+st.write("")  # Spacer
+
 # --- EXPERIENCE SECTION ---
 st.markdown('<div id="experience" class="section-header"><h2 class="section-title">Experience</h2><div class="section-divider"></div></div>', unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns([1, 6, 1])
 with col2:
-    # TATA Group (Virtual)
     st.markdown("""
     <div class="glass-card">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
             <div>
                 <h3 style="margin: 0; color: #fff; font-size: 1.3rem;">TATA Group (Virtual)</h3>
-                <p style="margin: 0; color: var(--primary-color); font-weight: 700; font-size: 1rem;">Data Visualization Intern</p>
+                <p style="margin: 0; color: #00d2ff; font-weight: 700; font-size: 1rem;">Data Visualization Intern</p>
             </div>
-            <span style="color: var(--text-muted); font-size: 0.9rem; font-family: 'Space Mono', monospace;">Sept 2024 – Oct 2024</span>
+            <span style="color: #94a3b8; font-size: 0.9rem; font-family: 'Space Mono', monospace;">Sept 2024 – Oct 2024</span>
         </div>
         <ul style="color: #cbd5e1; line-height: 1.8; font-size: 0.95rem;">
             <li>Engineered data cleaning and transformation pipelines to handle complex, multi-source business datasets.</li>
@@ -657,15 +615,14 @@ with col2:
     </div>
     """, unsafe_allow_html=True)
 
-    # British Airways (Virtual)
     st.markdown("""
     <div class="glass-card">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
             <div>
                 <h3 style="margin: 0; color: #fff; font-size: 1.3rem;">British Airways (Virtual)</h3>
-                <p style="margin: 0; color: var(--primary-color); font-weight: 700; font-size: 1rem;">Data Science Intern</p>
+                <p style="margin: 0; color: #00d2ff; font-weight: 700; font-size: 1rem;">Data Science Intern</p>
             </div>
-            <span style="color: var(--text-muted); font-size: 0.9rem; font-family: 'Space Mono', monospace;">Oct 2024 – Nov 2024</span>
+            <span style="color: #94a3b8; font-size: 0.9rem; font-family: 'Space Mono', monospace;">Oct 2024 – Nov 2024</span>
         </div>
         <ul style="color: #cbd5e1; line-height: 1.8; font-size: 0.95rem;">
             <li>Developed a web scraping pipeline using Python to extract and preprocess unstructured customer review data.</li>
@@ -676,15 +633,14 @@ with col2:
     </div>
     """, unsafe_allow_html=True)
 
-    # NASA Space Apps
     st.markdown("""
     <div class="glass-card">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
             <div>
                 <h3 style="margin: 0; color: #fff; font-size: 1.3rem;">NASA Space Apps Challenge</h3>
-                <p style="margin: 0; color: var(--primary-color); font-weight: 700; font-size: 1rem;">ML & Data Science Team Member</p>
+                <p style="margin: 0; color: #00d2ff; font-weight: 700; font-size: 1rem;">ML & Data Science Team Member</p>
             </div>
-            <span style="color: var(--text-muted); font-size: 0.9rem; font-family: 'Space Mono', monospace;">June 2025 – Sept 2025</span>
+            <span style="color: #94a3b8; font-size: 0.9rem; font-family: 'Space Mono', monospace;">June 2025 – Sept 2025</span>
         </div>
         <ul style="color: #cbd5e1; line-height: 1.8; font-size: 0.95rem;">
             <li>Built a weather-focused ML solution in collaboration with teammates as part of the world's largest global hackathon.</li>
@@ -692,6 +648,8 @@ with col2:
         </ul>
     </div>
     """, unsafe_allow_html=True)
+
+st.write("")  # Spacer
 
 # --- PROJECTS SECTION ---
 st.markdown('<div id="projects" class="section-header"><h2 class="section-title">Projects</h2><div class="section-divider"></div></div>', unsafe_allow_html=True)
@@ -790,6 +748,8 @@ project_item(
     "https://github.com/introverthacker11/AI-DataAnalyst-MCP"
 )
 
+st.write("")  # Spacer
+
 # --- EDUCATION SECTION ---
 st.markdown('<div id="education" class="section-header"><h2 class="section-title">Education</h2><div class="section-divider"></div></div>', unsafe_allow_html=True)
 
@@ -798,10 +758,12 @@ with col2:
     st.markdown("""
     <div class="glass-card" style="text-align: center;">
         <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.3rem;">Dawood University of Engineering and Technology</h3>
-        <p style="color: var(--primary-color); font-weight: 700; font-size: 1.2rem; margin-bottom: 1rem;">Bachelor of Science in Artificial Intelligence</p>
-        <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-family: 'Space Mono', monospace;">2022 — 2026</p>
+        <p style="color: #00d2ff; font-weight: 700; font-size: 1.2rem; margin-bottom: 1rem;">Bachelor of Science in Artificial Intelligence</p>
+        <p style="color: #94a3b8; margin-bottom: 1.5rem; font-family: 'Space Mono', monospace;">2022 — 2026</p>
     </div>
     """, unsafe_allow_html=True)
+
+st.write("")  # Spacer
 
 # --- CREDENTIALS SECTION ---
 st.markdown('<div id="credentials" class="section-header"><h2 class="section-title">Credentials</h2><div class="section-divider"></div></div>', unsafe_allow_html=True)
@@ -818,25 +780,27 @@ for i, cred in enumerate(credentials):
         st.markdown(f"""
         <div class="glass-card" style="padding: 1.5rem;">
             <h4 style="margin: 0 0 0.5rem 0; color: #fff; font-size: 1.1rem;">{cred['title']}</h4>
-            <p style="margin: 0 0 1rem 0; color: var(--primary-color); font-size: 0.9rem; font-family: 'Space Mono', monospace;">{cred['org']}</p>
+            <p style="margin: 0 0 1rem 0; color: #00d2ff; font-size: 0.9rem; font-family: 'Space Mono', monospace;">{cred['org']}</p>
             <a href="{cred['link']}" target="_blank" class="secondary-btn" style="padding: 0.4rem 1rem; font-size: 0.8rem; display: inline-block;">Verify</a>
         </div>
         """, unsafe_allow_html=True)
+
+st.write("")  # Spacer
 
 # --- FOOTER ---
 st.markdown("""
 <div class="footer">
     <div style="margin-bottom: 1.5rem;">
         <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem;">Rayyan Ahmed</h3>
-        <p style="color: var(--text-muted);">AI Engineer & Problem Solver</p>
+        <p style="color: #94a3b8;">AI Engineer & Problem Solver</p>
     </div>
     <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem;">
-        <a href="https://www.linkedin.com/in/rayyan-ahmed-504725321/" target="_blank" style="color: var(--primary-color); text-decoration: none; transition: all 0.3s ease; font-weight: 700;" onmouseover="this.style.textShadow='0 0 20px rgba(0, 210, 255, 0.5)'; this.style.transform='scale(1.1)';" onmouseout="this.style.textShadow='none'; this.style.transform='scale(1)';">LinkedIn</a>
-        <a href="https://github.com/CodingRayyan" target="_blank" style="color: var(--primary-color); text-decoration: none; transition: all 0.3s ease; font-weight: 700;" onmouseover="this.style.textShadow='0 0 20px rgba(0, 210, 255, 0.5)'; this.style.transform='scale(1.1)';" onmouseout="this.style.textShadow='none'; this.style.transform='scale(1)';">GitHub</a>
-        <a href="mailto:rayyanabeel22@gmail.com" style="color: var(--primary-color); text-decoration: none; transition: all 0.3s ease; font-weight: 700;" onmouseover="this.style.textShadow='0 0 20px rgba(0, 210, 255, 0.5)'; this.style.transform='scale(1.1)';" onmouseout="this.style.textShadow='none'; this.style.transform='scale(1)';">Email</a>
+        <a href="https://www.linkedin.com/in/rayyan-ahmed-504725321/" target="_blank" style="color: #00d2ff; text-decoration: none; transition: all 0.3s ease; font-weight: 700;">LinkedIn</a>
+        <a href="https://github.com/CodingRayyan" target="_blank" style="color: #00d2ff; text-decoration: none; transition: all 0.3s ease; font-weight: 700;">GitHub</a>
+        <a href="mailto:rayyanabeel22@gmail.com" style="color: #00d2ff; text-decoration: none; transition: all 0.3s ease; font-weight: 700;">Email</a>
     </div>
-    <p style="font-size: 0.8rem; color: var(--text-muted);">Website made by Rayyan Ahmed (Not AI).</p>
-    <p style="font-size: 0.8rem; color: var(--text-muted);">© 2026 Rayyan Ahmed.</p>
+    <p style="font-size: 0.8rem; color: #94a3b8;">Website made by Rayyan Ahmed (Not AI).</p>
+    <p style="font-size: 0.8rem; color: #94a3b8;">© 2026 Rayyan Ahmed.</p>
 </div>
 
 """, unsafe_allow_html=True)
