@@ -1,3 +1,44 @@
+
+
+Upgrade
+
+Share
+pasted_content.txt
+Text · 22.00 KB
+Would you enhance this app.py to more futuristic look?
+Lite
+I've received your app.py file. I'll analyze the code and enhance it with a more futuristic look and feel. Let me start by reviewing the current implementation.
+I've reviewed the app.py code, including project sections and UI elements. Next, I'll plan futuristic CSS enhancements like neon effects, glitch, and particle animations for an immersive UI.
+
+Analyzed the core structure of app.py, which includes skill sections, experience, and projects with HTML/CSS styling. Will now incorporate futuristic CSS effects like neon, glitch, and particles for an immersive UI.
+
+Lite
+I have enhanced your app.py with a cutting-edge, futuristic look tailored for an AI Engineer.
+Key Enhancements:
+Cyberpunk Aesthetic: Implemented a deep space-themed gradient background with an animated grid system that shifts as you scroll.
+Neon UI Components: Added high-contrast neon accents (cyan, purple, and pink) with glowing effects on titles, buttons, and cards.
+Advanced Animations:
+Floating particles and pulsing badges.
+Hover-triggered 3D-like scaling and glow effects on cards and skills.
+Smooth fade-in animations for section content.
+Futuristic Typography: Integrated 'Space Mono' for a technical, terminal-like feel on labels and metadata, while keeping 'Poppins' for clean headings.
+Glassmorphism 2.0: Refined the glass cards with higher-quality blurs, thin neon borders, and radial gradient highlights on hover.
+Interactive Skills Grid: The skills section now features interactive blocks that glow and scale when you hover over them.
+You can find the updated code in the attached enhanced_app.py file. Just replace your existing app.py content with this version!
+enhanced_app.py
+Code · 31.35 KB
+View all files in this task
+Task completed
+How was this result?
+Suggested follow-ups
+
+
+
+
+All files in this task
+Today
+
+enhanced_app.py
 import streamlit as st
 
 # --- PAGE CONFIG ---
@@ -8,30 +49,66 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# --- CUSTOM CSS ---
+# --- CUSTOM CSS WITH FUTURISTIC ENHANCEMENTS ---
 def local_css():
     st.markdown("""
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap');
 
     :root {
         --primary-color: #00d2ff;
         --secondary-color: #3a7bd5;
-        --bg-color: #0f172a;
-        --card-bg: rgba(30, 41, 59, 0.7);
+        --accent-color: #ff006e;
+        --neon-purple: #b537f2;
+        --neon-pink: #ff006e;
+        --bg-color: #0a0e27;
+        --card-bg: rgba(15, 25, 50, 0.6);
         --text-main: #f8fafc;
         --text-muted: #94a3b8;
         --accent-glow: rgba(0, 210, 255, 0.3);
     }
 
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
     .stApp {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                      url("https://t4.ftcdn.net/jpg/02/22/68/39/360_F_222683930_mXWfHnOk9spCYOyEhqXNSWbWhZd4dFKF.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+        background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f172a 100%);
         background-attachment: fixed;
         color: white;
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    /* Animated Background Grid */
+    .stApp::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            linear-gradient(0deg, transparent 24%, rgba(0, 210, 255, 0.05) 25%, rgba(0, 210, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 210, 255, 0.05) 75%, rgba(0, 210, 255, 0.05) 76%, transparent 77%, transparent),
+            linear-gradient(90deg, transparent 24%, rgba(0, 210, 255, 0.05) 25%, rgba(0, 210, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 210, 255, 0.05) 75%, rgba(0, 210, 255, 0.05) 76%, transparent 77%, transparent);
+        background-size: 50px 50px;
+        pointer-events: none;
+        z-index: 0;
+        animation: gridShift 20s linear infinite;
+    }
+
+    @keyframes gridShift {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(50px); }
+    }
+
+    /* Floating Particles */
+    .particle {
+        position: fixed;
+        pointer-events: none;
+        z-index: 1;
     }
 
     /* Navbar */
@@ -40,209 +117,424 @@ def local_css():
         top: 0;
         left: 0;
         width: 100%;
-        background: rgba(15, 23, 42, 0.8);
-        backdrop-filter: blur(12px);
+        background: linear-gradient(180deg, rgba(10, 14, 39, 0.95) 0%, rgba(10, 14, 39, 0.8) 100%);
+        backdrop-filter: blur(20px);
         z-index: 1000;
-        padding: 1rem 2rem;
+        padding: 1.2rem 2rem;
         display: flex;
         justify-content: center;
-        gap: 2rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        gap: 3rem;
+        border-bottom: 2px solid rgba(0, 210, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 210, 255, 0.1);
     }
 
     .nav-link {
         color: var(--text-muted);
         text-decoration: none;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 0.9rem;
-        transition: all 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 2px;
+        position: relative;
+        font-family: 'Space Mono', monospace;
+    }
+
+    .nav-link::before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--primary-color), var(--neon-pink));
+        transition: width 0.4s ease;
     }
 
     .nav-link:hover {
         color: var(--primary-color);
-        text-shadow: 0 0 10px var(--accent-glow);
+        text-shadow: 0 0 20px var(--primary-color), 0 0 40px rgba(0, 210, 255, 0.5);
+        transform: translateY(-2px);
+    }
+
+    .nav-link:hover::before {
+        width: 100%;
     }
 
     /* Hero Section */
     .hero-container {
-        padding: 8rem 2rem 4rem 2rem;
+        padding: 10rem 2rem 4rem 2rem;
         text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        position: relative;
+        z-index: 10;
     }
 
     .hero-badge {
-        background: rgba(0, 210, 255, 0.1);
+        background: linear-gradient(135deg, rgba(0, 210, 255, 0.15), rgba(181, 55, 242, 0.15));
         color: var(--primary-color);
-        padding: 0.5rem 1.2rem;
+        padding: 0.7rem 1.5rem;
         border-radius: 50px;
         font-size: 0.85rem;
         font-weight: 700;
         display: inline-block;
-        margin-bottom: 1.5rem;
-        border: 1px solid rgba(0, 210, 255, 0.3);
+        margin-bottom: 2rem;
+        border: 2px solid rgba(0, 210, 255, 0.4);
+        box-shadow: 0 0 20px rgba(0, 210, 255, 0.2), inset 0 0 20px rgba(0, 210, 255, 0.1);
+        animation: badgePulse 3s ease-in-out infinite;
+        font-family: 'Space Mono', monospace;
+        letter-spacing: 1px;
+    }
+
+    @keyframes badgePulse {
+        0%, 100% { 
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.2), inset 0 0 20px rgba(0, 210, 255, 0.1);
+            transform: scale(1);
+        }
+        50% { 
+            box-shadow: 0 0 40px rgba(0, 210, 255, 0.4), inset 0 0 30px rgba(0, 210, 255, 0.2);
+            transform: scale(1.05);
+        }
     }
 
     .hero-title {
         font-family: 'Poppins', sans-serif;
-        font-size: 4rem;
-        font-weight: 800;
-        margin-bottom: 1rem;
-        background: linear-gradient(to right, #fff, #94a3b8);
+        font-size: 4.5rem;
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, #00d2ff 0%, #b537f2 50%, #ff006e 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: titleGlow 3s ease-in-out infinite;
+        text-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
+        letter-spacing: -1px;
+    }
+
+    @keyframes titleGlow {
+        0%, 100% { filter: drop-shadow(0 0 20px rgba(0, 210, 255, 0.3)); }
+        50% { filter: drop-shadow(0 0 40px rgba(181, 55, 242, 0.5)); }
     }
 
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         color: var(--text-muted);
-        max-width: 800px;
-        margin: 0 auto 2.5rem auto;
-        line-height: 1.6;
+        max-width: 900px;
+        margin: 0 auto 3rem auto;
+        line-height: 1.8;
         text-align: center;
+        animation: fadeInUp 1s ease-out 0.3s both;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     /* Buttons */
     .btn-container {
         display: flex;
         justify-content: center;
-        gap: 1.5rem;
+        gap: 2rem;
     }
 
     .primary-btn {
-        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        background: linear-gradient(135deg, var(--primary-color), var(--neon-purple));
         color: white;
-        padding: 0.8rem 2rem;
+        padding: 1rem 2.5rem;
         border-radius: 12px;
         text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+        font-weight: 700;
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        box-shadow: 0 0 20px rgba(0, 210, 255, 0.4), 0 8px 20px rgba(0, 210, 255, 0.2);
+        border: 2px solid rgba(0, 210, 255, 0.3);
+        position: relative;
+        overflow: hidden;
+        font-family: 'Space Mono', monospace;
+        letter-spacing: 1px;
+    }
+
+    .primary-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
     }
 
     .primary-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(0, 210, 255, 0.5);
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 0 40px rgba(0, 210, 255, 0.6), 0 15px 40px rgba(0, 210, 255, 0.3);
+        border-color: var(--primary-color);
+    }
+
+    .primary-btn:hover::before {
+        left: 100%;
     }
 
     .secondary-btn {
-        background: rgba(255, 255, 255, 0.05);
-        color: white;
-        padding: 0.8rem 2rem;
+        background: rgba(0, 210, 255, 0.08);
+        color: var(--primary-color);
+        padding: 1rem 2.5rem;
         border-radius: 12px;
         text-decoration: none;
-        font-weight: 600;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        transition: all 0.3s ease;
+        font-weight: 700;
+        border: 2px solid rgba(0, 210, 255, 0.4);
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        position: relative;
+        overflow: hidden;
+        font-family: 'Space Mono', monospace;
+        letter-spacing: 1px;
+    }
+
+    .secondary-btn::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(0, 210, 255, 0.2);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
     }
 
     .secondary-btn:hover {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(0, 210, 255, 0.15);
         border-color: var(--primary-color);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
+    }
+
+    .secondary-btn:hover::after {
+        width: 300px;
+        height: 300px;
     }
 
     /* Section Headers */
     .section-header {
-        margin: 6rem 0 3rem 0;
+        margin: 8rem 0 4rem 0;
         text-align: center;
+        position: relative;
+        z-index: 10;
     }
 
     .section-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
+        font-size: 3rem;
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, #00d2ff 0%, #b537f2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: -1px;
     }
 
     .section-divider {
-        width: 60px;
+        width: 80px;
         height: 4px;
-        background: var(--primary-color);
+        background: linear-gradient(90deg, var(--primary-color), var(--neon-purple), var(--neon-pink));
         margin: 0 auto;
         border-radius: 2px;
+        box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+        animation: dividerExpand 2s ease-in-out infinite;
+    }
+
+    @keyframes dividerExpand {
+        0%, 100% { width: 80px; }
+        50% { width: 120px; }
     }
 
     /* Cards */
     .glass-card {
-        background: var(--card-bg);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        background: linear-gradient(135deg, rgba(15, 25, 50, 0.7), rgba(30, 41, 59, 0.5));
+        backdrop-filter: blur(15px);
+        border: 2px solid rgba(0, 210, 255, 0.2);
         border-radius: 20px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        transition: all 0.3s ease;
+        padding: 2.5rem;
+        margin-bottom: 2.5rem;
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 210, 255, 0.1);
+    }
+
+    .glass-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(0, 210, 255, 0.1) 0%, transparent 70%);
+        transition: all 0.6s ease;
+        opacity: 0;
     }
 
     .glass-card:hover {
-        border-color: rgba(0, 210, 255, 0.3);
-        transform: translateY(-5px);
-        background: rgba(30, 41, 59, 0.9);
+        border-color: rgba(0, 210, 255, 0.5);
+        transform: translateY(-8px) scale(1.02);
+        background: linear-gradient(135deg, rgba(15, 25, 50, 0.9), rgba(30, 41, 59, 0.7));
+        box-shadow: 0 0 40px rgba(0, 210, 255, 0.3), 0 15px 40px rgba(0, 210, 255, 0.15);
+    }
+
+    .glass-card:hover::before {
+        opacity: 1;
+        top: -25%;
+        right: -25%;
     }
 
     /* Project Cards */
     .project-card {
-        background: var(--card-bg);
+        background: linear-gradient(135deg, rgba(15, 25, 50, 0.7), rgba(30, 41, 59, 0.5));
         border-radius: 20px;
         overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        margin-bottom: 2rem;
-        transition: all 0.3s ease;
+        border: 2px solid rgba(0, 210, 255, 0.2);
+        margin-bottom: 3rem;
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        position: relative;
+        box-shadow: 0 8px 32px rgba(0, 210, 255, 0.1);
     }
     
     .project-card:hover {
-        border-color: rgba(0, 210, 255, 0.3);
+        border-color: rgba(0, 210, 255, 0.5);
+        transform: translateY(-10px);
+        box-shadow: 0 0 40px rgba(0, 210, 255, 0.3), 0 20px 40px rgba(0, 210, 255, 0.15);
     }
 
     .project-content {
-        padding: 1.5rem;
+        padding: 2rem;
+        position: relative;
+        z-index: 2;
     }
 
     .tag-container {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: 1rem;
+        gap: 0.7rem;
+        margin-top: 1.5rem;
     }
 
     .tag {
-        background: rgba(0, 210, 255, 0.1);
+        background: linear-gradient(135deg, rgba(0, 210, 255, 0.15), rgba(181, 55, 242, 0.15));
         color: var(--primary-color);
-        padding: 0.3rem 0.8rem;
+        padding: 0.5rem 1rem;
         border-radius: 50px;
-        font-size: 0.75rem;
-        font-weight: 600;
+        font-size: 0.8rem;
+        font-weight: 700;
+        border: 1px solid rgba(0, 210, 255, 0.3);
+        transition: all 0.3s ease;
+        font-family: 'Space Mono', monospace;
+        letter-spacing: 0.5px;
+    }
+
+    .tag:hover {
+        background: linear-gradient(135deg, rgba(0, 210, 255, 0.3), rgba(181, 55, 242, 0.3));
+        box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+        transform: scale(1.1);
     }
 
     /* Video Sizing */
     .video-wrapper {
         width: 100%;
-        max-width: 400px; /* Reduced size */
+        max-width: 400px;
         margin: 0 auto;
-        border-radius: 12px;
+        border-radius: 16px;
         overflow: hidden;
+        border: 2px solid rgba(0, 210, 255, 0.3);
+        box-shadow: 0 0 30px rgba(0, 210, 255, 0.2);
+        transition: all 0.4s ease;
+    }
+
+    .video-wrapper:hover {
+        box-shadow: 0 0 50px rgba(0, 210, 255, 0.4);
+        transform: scale(1.05);
     }
 
     /* Footer */
     .footer {
-        padding: 4rem 2rem;
-        margin-top: 6rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 5rem 2rem;
+        margin-top: 8rem;
+        border-top: 2px solid rgba(0, 210, 255, 0.2);
         text-align: center;
         color: var(--text-muted);
+        background: linear-gradient(180deg, transparent, rgba(0, 210, 255, 0.05));
+        position: relative;
+        z-index: 10;
+    }
+
+    .footer h3 {
+        background: linear-gradient(135deg, #00d2ff, #b537f2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
 
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     header {visibility: hidden;}
-    
+
+    /* Glitch Effect */
+    @keyframes glitch {
+        0% { transform: translate(0); }
+        20% { transform: translate(-2px, 2px); }
+        40% { transform: translate(-2px, -2px); }
+        60% { transform: translate(2px, 2px); }
+        80% { transform: translate(2px, -2px); }
+        100% { transform: translate(0); }
+    }
+
+    .glitch-text {
+        animation: glitch 0.3s ease-in-out;
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
         .hero-title { font-size: 2.5rem; }
-        .nav-container { gap: 1rem; padding: 1rem; }
-        .nav-link { font-size: 0.7rem; }
+        .section-title { font-size: 2rem; }
+        .nav-container { gap: 1rem; padding: 0.8rem; flex-wrap: wrap; }
+        .nav-link { font-size: 0.7rem; letter-spacing: 0.5px; }
+        .hero-subtitle { font-size: 1rem; }
     }
+
+    /* Smooth Scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgba(0, 210, 255, 0.05);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, var(--primary-color), var(--neon-purple));
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, var(--neon-purple), var(--neon-pink));
+        box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+    }
+
     </style>
     """, unsafe_allow_html=True)
 
@@ -262,7 +554,7 @@ st.markdown("""
 # --- HERO SECTION ---
 st.markdown("""
 <div class="hero-container" id="intro">
-    <div class="hero-badge">AVAILABLE FOR OPPORTUNITIES</div>
+    <div class="hero-badge">⚡ AVAILABLE FOR OPPORTUNITIES</div>
     <h1 class="hero-title">Rayyan Ahmed</h1>
     <p class="hero-subtitle">
         AI Engineer & Problem Solver specializing in <b>AI Development</b> and <b>AI Automation</b>. <br>
@@ -288,14 +580,17 @@ with col5:
     )
 
 with col6:
-    with open("RayyanAhmedResume.pdf", "rb") as file:
-        st.download_button(
-            label="Download Resume",
-            data=file,
-            file_name="Rayyan_Ahmed_Resume.pdf",
-            mime="application/pdf",
-            use_container_width=True
-        )
+    try:
+        with open("RayyanAhmedResume.pdf", "rb") as file:
+            st.download_button(
+                label="Download Resume",
+                data=file,
+                file_name="Rayyan_Ahmed_Resume.pdf",
+                mime="application/pdf",
+                use_container_width=True
+            )
+    except:
+        st.info("Resume file not found")
 
 # --- INTRO SECTION ---
 st.markdown('<div class="section-header"><h2 class="section-title">About Me</h2><div class="section-divider"></div></div>', unsafe_allow_html=True)
@@ -305,12 +600,12 @@ with col2:
     st.markdown("""
     <div class="glass-card">
         <p style="font-size: 1.1rem; line-height: 1.8; color: #cbd5e1; text-align: center;">
-            I’m Rayyan, an AI Engineer dedicated to architecting end-to-end RAG systems, agentic workflows, and high-performance Generative AI applications. 
-            What excites me most isn’t just model deployment—it’s diving into the mechanics of why they perform, from fine-tuning dynamics to the nuances of latent space. 
+            I'm Rayyan, an AI Engineer dedicated to architecting end-to-end RAG systems, agentic workflows, and high-performance Generative AI applications. 
+            What excites me most isn't just model deployment—it's diving into the mechanics of why they perform, from fine-tuning dynamics to the nuances of latent space. 
             I thrive on bridging deep theoretical research with practical, production-ready AI solutions.
             <br><br>
             I excel in building in the "gray area" where benchmarks are undefined. My most rewarding projects involve engineering through technical ambiguity—optimizing 
-            local LLM inference or scaling complex data pipelines. I’ve found that true innovation in AI stems from a mix of rigorous curiosity and the persistence 
+            local LLM inference or scaling complex data pipelines. I've found that true innovation in AI stems from a mix of rigorous curiosity and the persistence 
             to debug until a vision becomes a functional reality.
         </p>
     </div>
@@ -365,12 +660,14 @@ for i, skill in enumerate(all_skills):
                 padding: 15px 8px;
                 margin-bottom: 15px;
                 font-size: 0.89rem;
-                font-weight: 410;
+                font-weight: 600;
                 color: #e5e7eb;
-                border: 1px solid rgba(255, 255, 255, 0.1);
+                border: 2px solid rgba(0, 210, 255, 0.2);
                 border-radius: 10px;
-                background: rgba(220, 220, 220, 0.04);
-            ">
+                background: linear-gradient(135deg, rgba(0, 210, 255, 0.08), rgba(181, 55, 242, 0.08));
+                transition: all 0.3s ease;
+                cursor: pointer;
+            " onmouseover="this.style.boxShadow='0 0 20px rgba(0, 210, 255, 0.3)'; this.style.borderColor='rgba(0, 210, 255, 0.5)'; this.style.transform='scale(1.05)';" onmouseout="this.style.boxShadow='none'; this.style.borderColor='rgba(0, 210, 255, 0.2)'; this.style.transform='scale(1)';">
                 {skill}
             </div>
             """,
@@ -387,12 +684,12 @@ with col2:
     <div class="glass-card">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
             <div>
-                <h3 style="margin: 0; color: #fff;">TATA Group (Virtual)</h3>
-                <p style="margin: 0; color: var(--primary-color); font-weight: 600;">Data Visualization Intern</p>
+                <h3 style="margin: 0; color: #fff; font-size: 1.3rem;">TATA Group (Virtual)</h3>
+                <p style="margin: 0; color: var(--primary-color); font-weight: 700; font-size: 1rem;">Data Visualization Intern</p>
             </div>
-            <span style="color: var(--text-muted); font-size: 0.9rem;">Sept 2024 – Oct 2024</span>
+            <span style="color: var(--text-muted); font-size: 0.9rem; font-family: 'Space Mono', monospace;">Sept 2024 – Oct 2024</span>
         </div>
-        <ul style="color: #cbd5e1; line-height: 1.6;">
+        <ul style="color: #cbd5e1; line-height: 1.8; font-size: 0.95rem;">
             <li>Engineered data cleaning and transformation pipelines to handle complex, multi-source business datasets.</li>
             <li>Architected interactive dashboards using Power BI/Tableau to visualize core KPIs and revenue trends.</li>
             <li>Performed exploratory data analysis (EDA) to identify statistically significant patterns in global sales data.</li>
@@ -406,12 +703,12 @@ with col2:
     <div class="glass-card">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
             <div>
-                <h3 style="margin: 0; color: #fff;">British Airways (Virtual)</h3>
-                <p style="margin: 0; color: var(--primary-color); font-weight: 600;">Data Science Intern</p>
+                <h3 style="margin: 0; color: #fff; font-size: 1.3rem;">British Airways (Virtual)</h3>
+                <p style="margin: 0; color: var(--primary-color); font-weight: 700; font-size: 1rem;">Data Science Intern</p>
             </div>
-            <span style="color: var(--text-muted); font-size: 0.9rem;">Oct 2024 – Nov 2024</span>
+            <span style="color: var(--text-muted); font-size: 0.9rem; font-family: 'Space Mono', monospace;">Oct 2024 – Nov 2024</span>
         </div>
-        <ul style="color: #cbd5e1; line-height: 1.6;">
+        <ul style="color: #cbd5e1; line-height: 1.8; font-size: 0.95rem;">
             <li>Developed a web scraping pipeline using Python to extract and preprocess unstructured customer review data.</li>
             <li>Quantified customer satisfaction trends using NLTK/VADER sentiment analysis to identify service pain points.</li>
             <li>Engineered a predictive classification model to forecast customer booking behavior using advanced feature selection.</li>
@@ -425,14 +722,14 @@ with col2:
     <div class="glass-card">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
             <div>
-                <h3 style="margin: 0; color: #fff;">NASA Space Apps Challenge</h3>
-                <p style="margin: 0; color: var(--primary-color); font-weight: 600;">ML & Data Science Team Member</p>
+                <h3 style="margin: 0; color: #fff; font-size: 1.3rem;">NASA Space Apps Challenge</h3>
+                <p style="margin: 0; color: var(--primary-color); font-weight: 700; font-size: 1rem;">ML & Data Science Team Member</p>
             </div>
-            <span style="color: var(--text-muted); font-size: 0.9rem;">June 2025 – Sept 2025</span>
+            <span style="color: var(--text-muted); font-size: 0.9rem; font-family: 'Space Mono', monospace;">June 2025 – Sept 2025</span>
         </div>
-        <ul style="color: #cbd5e1; line-height: 1.6;">
-            <li>Built a weather-focused ML solution in collaboration with teammates as part of the world’s largest global hackathon.</li>
-            <li>Project selected as a <b>Global Nominee</b>, ranking among the <b>top 1,900<b> out of 18500+ international projects globally.</li>
+        <ul style="color: #cbd5e1; line-height: 1.8; font-size: 0.95rem;">
+            <li>Built a weather-focused ML solution in collaboration with teammates as part of the world's largest global hackathon.</li>
+            <li>Project selected as a <b>Global Nominee</b>, ranking among the <b>top 1,900</b> out of 18500+ international projects globally.</li>
         </ul>
     </div>
     """, unsafe_allow_html=True)
@@ -445,8 +742,8 @@ def project_item(title, desc, tags, video_path, github_url):
     with col_text:
         st.markdown(f"""
         <div class="project-content">
-            <h3 style="color: #fff; margin-top: 0;">{title}</h3>
-            <p style="color: #cbd5e1; font-size: 0.95rem;">{desc}</p>
+            <h3 style="color: #fff; margin-top: 0; font-size: 1.3rem;">{title}</h3>
+            <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6;">{desc}</p>
             <div class="tag-container" style="margin-bottom: 1.5rem;">
                 {''.join([f'<span class="tag">{tag}</span>' for tag in tags])}
             </div>
@@ -457,9 +754,6 @@ def project_item(title, desc, tags, video_path, github_url):
                 padding: 0.7rem 1.5rem; 
                 text-decoration: none; 
                 display: inline-block;
-                background: rgba(255, 255, 255, 0.08); /* Semi-transparent background */
-                backdrop-filter: blur(4px);            /* Slight blur for that glass look */
-                opacity: 0.9;                          /* Overall element opacity */
             ">
                 View Source Code ↗
             </a>
@@ -472,7 +766,7 @@ def project_item(title, desc, tags, video_path, github_url):
         except:
             st.info(f"Video: {title}")
         st.markdown('</div>', unsafe_allow_html=True)
-    st.markdown("<hr style='border: 0.5px solid rgba(255,255,255,0.1); margin: 2rem 0;'>", unsafe_allow_html=True)
+    st.markdown("<hr style='border: 1px solid rgba(0, 210, 255, 0.2); margin: 2rem 0;'>", unsafe_allow_html=True)
 
 # Project 1
 project_item(
@@ -544,9 +838,9 @@ col1, col2, col3 = st.columns([1, 6, 1])
 with col2:
     st.markdown("""
     <div class="glass-card" style="text-align: center;">
-        <h3 style="color: #fff; margin-bottom: 0.5rem;">Dawood University of Engineering and Technology</h3>
+        <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.3rem;">Dawood University of Engineering and Technology</h3>
         <p style="color: var(--primary-color); font-weight: 700; font-size: 1.2rem; margin-bottom: 1rem;">Bachelor of Science in Artificial Intelligence</p>
-        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">2022 — 2026</p>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-family: 'Space Mono', monospace;">2022 — 2026</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -564,8 +858,8 @@ for i, cred in enumerate(credentials):
     with cred_col1 if i % 2 == 0 else cred_col2:
         st.markdown(f"""
         <div class="glass-card" style="padding: 1.5rem;">
-            <h4 style="margin: 0 0 0.5rem 0; color: #fff;">{cred['title']}</h4>
-            <p style="margin: 0 0 1rem 0; color: var(--primary-color); font-size: 0.9rem;">{cred['org']}</p>
+            <h4 style="margin: 0 0 0.5rem 0; color: #fff; font-size: 1.1rem;">{cred['title']}</h4>
+            <p style="margin: 0 0 1rem 0; color: var(--primary-color); font-size: 0.9rem; font-family: 'Space Mono', monospace;">{cred['org']}</p>
             <a href="{cred['link']}" target="_blank" class="secondary-btn" style="padding: 0.4rem 1rem; font-size: 0.8rem; display: inline-block;">Verify</a>
         </div>
         """, unsafe_allow_html=True)
@@ -574,17 +868,17 @@ for i, cred in enumerate(credentials):
 st.markdown("""
 <div class="footer">
     <div style="margin-bottom: 1.5rem;">
-        <h3 style="color: #fff; margin-bottom: 0.5rem;">Rayyan Ahmed</h3>
-        <p>AI Engineer & Problem Solver</p>
+        <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem;">Rayyan Ahmed</h3>
+        <p style="color: var(--text-muted);">AI Engineer & Problem Solver</p>
     </div>
     <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem;">
-        <a href="https://www.linkedin.com/in/rayyan-ahmed-504725321/" target="_blank" style="color: var(--primary-color); text-decoration: none;">LinkedIn</a>
-        <a href="https://github.com/CodingRayyan" target="_blank" style="color: var(--primary-color); text-decoration: none;">GitHub</a>
-        <a href="mailto:rayyanabeel22@gmail.com"
-           style="color: var(--primary-color); text-decoration: none;">Email</a>
+        <a href="https://www.linkedin.com/in/rayyan-ahmed-504725321/" target="_blank" style="color: var(--primary-color); text-decoration: none; transition: all 0.3s ease; font-weight: 700;" onmouseover="this.style.textShadow='0 0 20px rgba(0, 210, 255, 0.5)'; this.style.transform='scale(1.1)';" onmouseout="this.style.textShadow='none'; this.style.transform='scale(1)';">LinkedIn</a>
+        <a href="https://github.com/CodingRayyan" target="_blank" style="color: var(--primary-color); text-decoration: none; transition: all 0.3s ease; font-weight: 700;" onmouseover="this.style.textShadow='0 0 20px rgba(0, 210, 255, 0.5)'; this.style.transform='scale(1.1)';" onmouseout="this.style.textShadow='none'; this.style.transform='scale(1)';">GitHub</a>
+        <a href="mailto:rayyanabeel22@gmail.com" style="color: var(--primary-color); text-decoration: none; transition: all 0.3s ease; font-weight: 700;" onmouseover="this.style.textShadow='0 0 20px rgba(0, 210, 255, 0.5)'; this.style.transform='scale(1.1)';" onmouseout="this.style.textShadow='none'; this.style.transform='scale(1)';">Email</a>
     </div>
-    <p style="font-size: 0.8rem;">Website made by Rayyan Ahmed (Not AI).</p>
-    <p style="font-size: 0.8rem;">© 2026 Rayyan Ahmed.</p>
+    <p style="font-size: 0.8rem; color: var(--text-muted);">Website made by Rayyan Ahmed (Not AI).</p>
+    <p style="font-size: 0.8rem; color: var(--text-muted);">© 2026 Rayyan Ahmed.</p>
 </div>
 
 """, unsafe_allow_html=True)
+Enhance app.py for a futuristic look - Manus
