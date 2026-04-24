@@ -34,7 +34,7 @@ def local_css():
 
     /* CUSTOM BACKGROUND IMAGE */
     html, body, [data-testid="stAppViewContainer"] {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+        background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), 
                           url("https://www.shutterstock.com/image-illustration/abstract-digital-visualization-glowing-teal-600nw-2753653119.jpg") !important;
         background-size: cover !important;
         background-position: center !important;
