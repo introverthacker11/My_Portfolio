@@ -88,7 +88,7 @@ def local_css():
     }
 
     .nav-link:hover {
-        color: #00ff88;
+        color: #00ff88 !important; /* Force green color on hover */
         text-shadow: 0 0 20px #00ff88, 0 0 40px rgba(0, 255, 136, 0.5);
         transform: translateY(-2px);
     }
@@ -193,10 +193,11 @@ def local_css():
         box-shadow: 0 0 30px rgba(0, 255, 136, 0.4) !important;
     }
 
-    /* Force Download Button to look like others */
-    div.stDownloadButton > button {
-        margin: 0 !important;
-        font-size: 0.9rem !important;
+    /* Ensure Streamlit's base button styling doesn't override */
+    [data-testid="stBaseButton-secondary"] {
+        background-color: rgba(0, 255, 136, 0.1) !important;
+        border-color: rgba(0, 255, 136, 0.4) !important;
+        color: #00ff88 !important;
     }
 
     /* Section Headers */
