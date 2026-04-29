@@ -34,7 +34,7 @@ def local_css():
 
     /* CUSTOM BACKGROUND IMAGE */
     html, body, [data-testid="stAppViewContainer"] {
-        background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), 
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
                           url("https://static.vecteezy.com/system/resources/thumbnails/072/972/723/small/digital-technology-abstract-background-with-glowing-circuit-board-pattern-representing-modern-connectivity-and-future-innovation-in-dark-blue-color-photo.jpeg") !important;
         background-size: cover !important;
         background-position: center !important;
