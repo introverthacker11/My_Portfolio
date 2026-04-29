@@ -15,16 +15,16 @@ def local_css():
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap');
 
     :root {
-        --primary-color: #00d2ff;
-        --secondary-color: #3a7bd5;
-        --accent-color: #ff006e;
-        --neon-purple: #b537f2;
-        --neon-pink: #ff006e;
-        --bg-color: #0a0e27;
-        --card-bg: rgba(15, 25, 50, 0.7);
-        --text-main: #f8fafc;
+        --primary-color: #00ff88;
+        --secondary-color: #00a86b;
+        --accent-color: #7cfc00;
+        --neon-green: #39ff14;
+        --neon-emerald: #50c878;
+        --bg-color: #051a10;
+        --card-bg: rgba(10, 30, 20, 0.7);
+        --text-main: #f0fdf4;
         --text-muted: #94a3b8;
-        --accent-glow: rgba(0, 210, 255, 0.3);
+        --accent-glow: rgba(0, 255, 136, 0.3);
     }
 
     * {
@@ -34,7 +34,7 @@ def local_css():
 
     /* CUSTOM BACKGROUND IMAGE */
     html, body, [data-testid="stAppViewContainer"] {
-        background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), 
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
                           url("https://media.istockphoto.com/id/1667448660/vector/double-abstract-green-technology-wave-flow-of-particles-big-data-transfer-visualization.jpg?s=612x612&w=0&k=20&c=01-ldGNw1lsHyc33pCTO4dBhikrZkNJh9aJRhVoE8rI=") !important;
         background-size: cover !important;
         background-position: center !important;
@@ -52,15 +52,15 @@ def local_css():
         top: 0;
         left: 0;
         width: 100%;
-        background: linear-gradient(180deg, rgba(10, 14, 39, 0.98) 0%, rgba(10, 14, 39, 0.85) 100%);
+        background: linear-gradient(180deg, rgba(5, 26, 16, 0.98) 0%, rgba(5, 26, 16, 0.85) 100%);
         backdrop-filter: blur(20px);
         z-index: 1000;
         padding: 1.2rem 2rem;
         display: flex;
         justify-content: center;
         gap: 3rem;
-        border-bottom: 2px solid rgba(0, 210, 255, 0.2);
-        box-shadow: 0 8px 32px rgba(0, 210, 255, 0.1);
+        border-bottom: 2px solid rgba(0, 255, 136, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 255, 136, 0.1);
     }
 
     .nav-link {
@@ -83,13 +83,13 @@ def local_css():
         left: 0;
         width: 0;
         height: 2px;
-        background: linear-gradient(90deg, #00d2ff, #ff006e);
+        background: linear-gradient(90deg, #00ff88, #7cfc00);
         transition: width 0.4s ease;
     }
 
     .nav-link:hover {
-        color: #00d2ff;
-        text-shadow: 0 0 20px #00d2ff, 0 0 40px rgba(0, 210, 255, 0.5);
+        color: #00ff88;
+        text-shadow: 0 0 20px #00ff88, 0 0 40px rgba(0, 255, 136, 0.5);
         transform: translateY(-2px);
     }
 
@@ -110,16 +110,16 @@ def local_css():
     }
 
     .hero-badge {
-        background: linear-gradient(135deg, rgba(0, 210, 255, 0.15), rgba(181, 55, 242, 0.15));
-        color: #00d2ff;
+        background: linear-gradient(135deg, rgba(0, 255, 136, 0.15), rgba(124, 252, 0, 0.15));
+        color: #00ff88;
         padding: 0.7rem 1.5rem;
         border-radius: 50px;
         font-size: 0.85rem;
         font-weight: 700;
         display: inline-block;
         margin-bottom: 2rem;
-        border: 2px solid rgba(0, 210, 255, 0.4);
-        box-shadow: 0 0 20px rgba(0, 210, 255, 0.2), inset 0 0 20px rgba(0, 210, 255, 0.1);
+        border: 2px solid rgba(0, 255, 136, 0.4);
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.2), inset 0 0 20px rgba(0, 255, 136, 0.1);
         animation: badgePulse 3s ease-in-out infinite;
         font-family: 'Space Mono', monospace;
         letter-spacing: 1px;
@@ -127,11 +127,11 @@ def local_css():
 
     @keyframes badgePulse {
         0%, 100% { 
-            box-shadow: 0 0 20px rgba(0, 210, 255, 0.2), inset 0 0 20px rgba(0, 210, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.2), inset 0 0 20px rgba(0, 255, 136, 0.1);
             transform: scale(1);
         }
         50% { 
-            box-shadow: 0 0 40px rgba(0, 210, 255, 0.4), inset 0 0 30px rgba(0, 210, 255, 0.2);
+            box-shadow: 0 0 40px rgba(0, 255, 136, 0.4), inset 0 0 30px rgba(0, 255, 136, 0.2);
             transform: scale(1.05);
         }
     }
@@ -141,7 +141,7 @@ def local_css():
         font-size: 4.5rem;
         font-weight: 900;
         margin-bottom: 1.5rem;
-        background: linear-gradient(135deg, #00d2ff 0%, #b537f2 50%, #ff006e 100%);
+        background: linear-gradient(135deg, #00ff88 0%, #39ff14 50%, #7cfc00 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -150,8 +150,8 @@ def local_css():
     }
 
     @keyframes titleGlow {
-        0%, 100% { filter: drop-shadow(0 0 20px rgba(0, 210, 255, 0.3)); }
-        50% { filter: drop-shadow(0 0 40px rgba(181, 55, 242, 0.5)); }
+        0%, 100% { filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.3)); }
+        50% { filter: drop-shadow(0 0 40px rgba(57, 255, 20, 0.5)); }
     }
 
     .hero-subtitle {
@@ -166,13 +166,13 @@ def local_css():
 
     /* Buttons Styling */
     .secondary-btn, div.stDownloadButton > button {
-        background: rgba(0, 210, 255, 0.1) !important;
-        color: #00d2ff !important;
+        background: rgba(0, 255, 136, 0.1) !important;
+        color: #00ff88 !important;
         padding: 0.8rem 2rem !important;
         border-radius: 12px !important;
         text-decoration: none !important;
         font-weight: 700 !important;
-        border: 2px solid rgba(0, 210, 255, 0.4) !important;
+        border: 2px solid rgba(0, 255, 136, 0.4) !important;
         transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
         font-family: 'Space Mono', monospace !important;
         letter-spacing: 1px !important;
@@ -186,11 +186,11 @@ def local_css():
     }
 
     .secondary-btn:hover, div.stDownloadButton > button:hover {
-        background: rgba(0, 210, 255, 0.25) !important;
-        border-color: #00d2ff !important;
+        background: rgba(0, 255, 136, 0.25) !important;
+        border-color: #00ff88 !important;
         color: white !important;
         transform: translateY(-3px) !important;
-        box-shadow: 0 0 30px rgba(0, 210, 255, 0.4) !important;
+        box-shadow: 0 0 30px rgba(0, 255, 136, 0.4) !important;
     }
 
     /* Force Download Button to look like others */
@@ -211,7 +211,7 @@ def local_css():
         font-size: 3rem;
         font-weight: 900;
         margin-bottom: 1.5rem;
-        background: linear-gradient(135deg, #00d2ff 0%, #b537f2 100%);
+        background: linear-gradient(135deg, #00ff88 0%, #39ff14 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -221,17 +221,17 @@ def local_css():
     .section-divider {
         width: 80px;
         height: 4px;
-        background: linear-gradient(90deg, #00d2ff, #b537f2, #ff006e);
+        background: linear-gradient(90deg, #00ff88, #39ff14, #7cfc00);
         margin: 0 auto;
         border-radius: 2px;
-        box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
     }
 
     /* Cards */
     .glass-card {
-        background: linear-gradient(135deg, rgba(15, 25, 50, 0.85), rgba(30, 41, 59, 0.7));
+        background: linear-gradient(135deg, rgba(10, 30, 20, 0.85), rgba(15, 45, 30, 0.7));
         backdrop-filter: blur(15px);
-        border: 2px solid rgba(0, 210, 255, 0.2);
+        border: 2px solid rgba(0, 255, 136, 0.2);
         border-radius: 20px;
         padding: 2.5rem;
         margin-bottom: 2.5rem;
@@ -240,35 +240,35 @@ def local_css():
     }
 
     .glass-card:hover {
-        border-color: rgba(0, 210, 255, 0.5);
+        border-color: rgba(0, 255, 136, 0.5);
         transform: translateY(-5px);
-        box-shadow: 0 0 40px rgba(0, 210, 255, 0.2);
+        box-shadow: 0 0 40px rgba(0, 255, 136, 0.2);
     }
 
     .tag {
-        background: linear-gradient(135deg, rgba(0, 210, 255, 0.2), rgba(181, 55, 242, 0.2));
-        color: #00d2ff;
+        background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(57, 255, 20, 0.2));
+        color: #00ff88;
         padding: 0.5rem 1rem;
         border-radius: 50px;
         font-size: 0.8rem;
         font-weight: 700;
-        border: 1px solid rgba(0, 210, 255, 0.3);
+        border: 1px solid rgba(0, 255, 136, 0.3);
         font-family: 'Space Mono', monospace;
     }
 
     .video-wrapper {
         border-radius: 16px;
         overflow: hidden;
-        border: 2px solid rgba(0, 210, 255, 0.3);
-        box-shadow: 0 0 30px rgba(0, 210, 255, 0.2);
+        border: 2px solid rgba(0, 255, 136, 0.3);
+        box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
     }
 
     .footer {
         padding: 5rem 2rem;
         margin-top: 8rem;
-        border-top: 2px solid rgba(0, 210, 255, 0.2);
+        border-top: 2px solid rgba(0, 255, 136, 0.2);
         text-align: center;
-        background: rgba(10, 14, 39, 0.9);
+        background: rgba(5, 26, 16, 0.9);
     }
 
     #MainMenu {visibility: hidden;}
@@ -326,7 +326,7 @@ with col4:
 
 with col5:
     try:
-        with open("RayyanAhmedResume.pdf", "rb") as file:
+        with open("Rayyan_Ahmed_Resume.pdf", "rb") as file:
             st.download_button(
                 label="Resume",
                 data=file,
@@ -383,8 +383,8 @@ for i, skill in enumerate(all_skills):
             <div class="glass-card" style="
                 text-align: center; padding: 12px 5px; margin-bottom: 12px;
                 font-size: 0.85rem; font-weight: 600; color: #e5e7eb;
-                border: 1px solid rgba(0, 210, 255, 0.3); border-radius: 10px;
-                background: rgba(0, 210, 255, 0.05);
+                border: 1px solid rgba(0, 255, 136, 0.3); border-radius: 10px;
+                background: rgba(0, 255, 136, 0.05);
             ">
                 {skill}
             </div>
@@ -398,7 +398,6 @@ st.markdown('<div id="experience" class="section-header"><h2 class="section-titl
 col1, col2, col3 = st.columns([1, 6, 1])
 with col2:
     experiences = [
-
         {
           "title": "AI Model Developer",
           "company": "Techware Hub",
@@ -409,11 +408,10 @@ with col2:
             "Built and orchestrated workflows using LangChain and Agentic AI architectures for autonomous task execution.",
             "Designed data processing and visualization pipelines to support model training and insight generation."
           ]
-        }
-
+        },
         {
           "title": "ML & Data Science Team Member",
-          "company": "NASA Official Space Apps Challenge 2025 - (Project selected in the top 1,900 out of 18,500+ international submissions)",
+          "company": "NASA Official Space Apps Challenge 2025",
           "date": "July 2025 – Sept 2025",
           "points": [
             "Developed a weather-focused ML solution using NASA POWER API for real-world climate data ingestion.",
@@ -422,8 +420,7 @@ with col2:
             "Built machine learning models for training and predictive insights.",
             "Deployed the solution using Streamlit for interactive user access.",
           ]
-        }
-
+        },
         {
           "title": "Data Science Intern",
           "company": "British Airways (Virtual)",
@@ -436,8 +433,7 @@ with col2:
             "Built machine learning models (Random Forest, XGBoost) for predictive analysis.",
             "Used Mutual Information for feature selection to improve model performance."
           ]
-        }
-
+        },
         {
           "title": "Data Visualization Intern",
           "company": "TATA Group (Virtual)",
@@ -447,7 +443,6 @@ with col2:
             "Developed data visualizations and built interactive dashboards using Power BI and Tableau for business intelligence reporting."
           ]
         }
-        
     ]
     
     for exp in experiences:
@@ -456,7 +451,7 @@ with col2:
             <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
                 <div>
                     <h3 style="margin: 0; color: #fff; font-size: 1.3rem;">{exp['company']}</h3>
-                    <p style="margin: 0; color: #00d2ff; font-weight: 700;">{exp['title']}</p>
+                    <p style="margin: 0; color: #00ff88; font-weight: 700;">{exp['title']}</p>
                 </div>
                 <span style="color: #94a3b8; font-family: 'Space Mono', monospace;">{exp['date']}</span>
             </div>
@@ -489,7 +484,7 @@ def project_item(title, desc, tags, video_path, github_url):
         except:
             st.info(f"Video: {title}")
         st.markdown('</div>', unsafe_allow_html=True)
-    st.markdown("<hr style='border: 1px solid rgba(0, 210, 255, 0.1); margin: 3rem 0;'>", unsafe_allow_html=True)
+    st.markdown("<hr style='border: 1px solid rgba(0, 255, 136, 0.1); margin: 3rem 0;'>", unsafe_allow_html=True)
 
 projects = [
     ("1️⃣ AI VisionLock", "Real-time object tracking system.", ["CompVision", "OpenCV", "Tracking"], "video2_finaloutput.mp4", "https://github.com/introverthacker11/CompVision-AIVisionLock-ObjectTrackingSystem___r38"),
@@ -509,7 +504,7 @@ st.markdown('<div id="education" class="section-header"><h2 class="section-title
 st.markdown("""
 <div class="glass-card" style="text-align: center; max-width: 800px; margin: 0 auto;">
     <h3 style="color: #fff;">Dawood University of Engineering and Technology</h3>
-    <p style="color: #00d2ff; font-weight: 700; font-size: 1.2rem;">Bachelor of Science in Artificial Intelligence</p>
+    <p style="color: #00ff88; font-weight: 700; font-size: 1.2rem;">Bachelor of Science in Artificial Intelligence</p>
     <p style="color: #94a3b8; font-family: 'Space Mono', monospace;">2022 — 2026</p>
 </div>
 """, unsafe_allow_html=True)
@@ -527,7 +522,7 @@ for i, cred in enumerate(credentials):
         st.markdown(f"""
         <div class="glass-card" style="padding: 1.5rem;">
             <h4 style="margin: 0 0 0.5rem 0; color: #fff;">{cred['title']}</h4>
-            <p style="margin: 0 0 1rem 0; color: #00d2ff; font-size: 0.9rem;">{cred['org']}</p>
+            <p style="margin: 0 0 1rem 0; color: #00ff88; font-size: 0.9rem;">{cred['org']}</p>
             <a href="{cred['link']}" target="_blank" class="secondary-btn" style="padding: 0.4rem 1rem; font-size: 0.8rem;">Verify</a>
         </div>
         """, unsafe_allow_html=True)
@@ -538,8 +533,8 @@ st.markdown("""
     <h3 style="margin-bottom: 0.5rem;">Rayyan Ahmed</h3>
     <p style="color: #94a3b8; margin-bottom: 2rem;">AI Engineer & Problem Solver</p>
     <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem;">
-        <a href="https://www.linkedin.com/in/rayyan-ahmed-504725321/" target="_blank" style="color: #00d2ff; text-decoration: none; font-weight: 700;">LinkedIn</a>
-        <a href="https://github.com/CodingRayyan" target="_blank" style="color: #00d2ff; text-decoration: none; font-weight: 700;">GitHub</a>
+        <a href="https://www.linkedin.com/in/rayyan-ahmed-504725321/" target="_blank" style="color: #00ff88; text-decoration: none; font-weight: 700;">LinkedIn</a>
+        <a href="https://github.com/CodingRayyan" target="_blank" style="color: #00ff88; text-decoration: none; font-weight: 700;">GitHub</a>
     </div>
     <p style="font-size: 0.8rem; color: #94a3b8;">© 2026 Rayyan Ahmed.</p>
 </div>
