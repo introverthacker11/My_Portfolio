@@ -398,20 +398,56 @@ st.markdown('<div id="experience" class="section-header"><h2 class="section-titl
 col1, col2, col3 = st.columns([1, 6, 1])
 with col2:
     experiences = [
-        {"title": "Data Visualization Intern", "company": "TATA Group (Virtual)", "date": "Sept 2024 – Oct 2024", "points": [
-            "Engineered data cleaning and transformation pipelines to handle complex business datasets.",
-            "Architected interactive dashboards using Power BI/Tableau to visualize core KPIs.",
-            "Performed EDA to identify significant patterns in global sales data."
-        ]},
-        {"title": "Data Science Intern", "company": "British Airways (Virtual)", "date": "Oct 2024 – Nov 2024", "points": [
-            "Developed a web scraping pipeline using Python for customer review data.",
-            "Quantified satisfaction trends using NLTK/VADER sentiment analysis.",
-            "Engineered a predictive classification model for booking behavior."
-        ]},
-        {"title": "ML & Data Science Team Member", "company": "NASA Space Apps Challenge", "date": "June 2025 – Sept 2025", "points": [
-            "Built a weather-focused ML solution for the global hackathon.",
-            "Project selected as a Global Nominee, ranking in the top 1,900 globally."
-        ]}
+
+        {
+          "title": "AI Model Developer",
+          "company": "Techware Hub",
+          "date": "Dec 2025 - Feb 2026",
+          "points": [
+            "Engineered end-to-end AI solutions using Python across Machine Learning, Computer Vision, and Natural Language Processing domains.",
+            "Developed and integrated Large Language Models (LLMs) with Retrieval-Augmented Generation (RAG) pipelines for intelligent data-driven applications.",
+            "Built and orchestrated workflows using LangChain and Agentic AI architectures for autonomous task execution.",
+            "Designed data processing and visualization pipelines to support model training and insight generation."
+          ]
+        }
+
+        {
+          "title": "ML & Data Science Team Member",
+          "company": "NASA Official Space Apps Challenge 2025 - (Project selected in the top 1,900 out of 18,500+ international submissions)",
+          "date": "July 2025 – Sept 2025",
+          "points": [
+            "Developed a weather-focused ML solution using NASA POWER API for real-world climate data ingestion.",
+            "Performed data gathering and cleaning using Excel and SQL, followed by preprocessing for model readiness.",
+            "Applied Pandas and Seaborn for data visualization and exploratory analysis.",
+            "Built machine learning models for training and predictive insights.",
+            "Deployed the solution using Streamlit for interactive user access.",
+          ]
+        }
+
+        {
+          "title": "Data Science Intern",
+          "company": "British Airways (Virtual)",
+          "date": "Oct 2024 – Nov 2024",
+          "points": [
+            "Developed a web scraping pipeline using Python to collect customer review data.",
+            "Performed data cleaning and preprocessing to ensure data quality and consistency.",
+            "Conducted exploratory data analysis (EDA) to uncover trends and patterns.",
+            "Applied sentiment analysis using NLTK and VADER to quantify customer satisfaction.",
+            "Built machine learning models (Random Forest, XGBoost) for predictive analysis.",
+            "Used Mutual Information for feature selection to improve model performance."
+          ]
+        }
+
+        {
+          "title": "Data Visualization Intern",
+          "company": "TATA Group (Virtual)",
+          "date": "Sept 2024 – Oct 2024",
+          "points": [
+            "Performed data cleaning and transformation, followed by EDA to uncover key business insights from complex datasets.",
+            "Developed data visualizations and built interactive dashboards using Power BI and Tableau for business intelligence reporting."
+          ]
+        }
+        
     ]
     
     for exp in experiences:
