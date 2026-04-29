@@ -398,7 +398,6 @@ st.markdown('<div id="experience" class="section-header"><h2 class="section-titl
 col1, col2, col3 = st.columns([1, 6, 1])
 with col2:
     experiences = [
-
         {
           "title": "AI Model Developer",
           "company": "Techware Hub",
@@ -409,7 +408,7 @@ with col2:
             "Built and orchestrated workflows using LangChain and Agentic AI architectures for autonomous task execution.",
             "Designed data processing and visualization pipelines to support model training and insight generation."
           ]
-        }
+        },
 
         {
           "title": "ML & Data Science Team Member",
@@ -422,7 +421,7 @@ with col2:
             "Built machine learning models for training and predictive insights.",
             "Deployed the solution using Streamlit for interactive user access.",
           ]
-        }
+        },
 
         {
           "title": "Data Science Intern",
@@ -436,7 +435,7 @@ with col2:
             "Built machine learning models (Random Forest, XGBoost) for predictive analysis.",
             "Used Mutual Information for feature selection to improve model performance."
           ]
-        }
+        },
 
         {
           "title": "Data Visualization Intern",
@@ -446,7 +445,7 @@ with col2:
             "Performed data cleaning and transformation, followed by EDA to uncover key business insights from complex datasets.",
             "Developed data visualizations and built interactive dashboards using Power BI and Tableau for business intelligence reporting."
           ]
-        }
+        },
         
     ]
     
