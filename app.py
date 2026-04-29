@@ -35,7 +35,7 @@ def local_css():
     /* CUSTOM BACKGROUND IMAGE */
     html, body, [data-testid="stAppViewContainer"] {
         background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), 
-                          url("https://img.freepik.com/free-vector/blue-futuristic-waves-background-with-computer-code-technology_53876-119584.jpg?semt=ais_hybrid&w=740&q=80") !important;
+                          url("https://media.istockphoto.com/id/1667448660/vector/double-abstract-green-technology-wave-flow-of-particles-big-data-transfer-visualization.jpg?s=612x612&w=0&k=20&c=01-ldGNw1lsHyc33pCTO4dBhikrZkNJh9aJRhVoE8rI=") !important;
         background-size: cover !important;
         background-position: center !important;
         background-attachment: fixed !important;
